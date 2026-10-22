@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>xGRC Color</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5AB0FF}a:hover{color:#8CC8FF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1180px; box-sizing: border-box; padding: 72px; background: #0E0F11; color: #F4F4F2; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 56px">
+
+  <header style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 72px; align-items: end">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <div style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #868C96">xGRC design system · 01 Color</div>
+      <h1 style="margin: 0; font-size: 88px; line-height: 0.95; font-weight: 700; letter-spacing: -0.03em">Tally</h1>
+      <p style="margin: 0; font-size: 20px; line-height: 1.45; color: #A6ABB3; max-width: 720px">A dark-first instrument palette for a camera remote you use outdoors, on the wrist and in gloves. Black ground, four signal colours, and nothing decorative. Like a camera's tally lamp, every colour reports a state.</p>
+    </div>
+    <ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+      <li style="background: #17191C; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 17px">Glanceable</span><span style="font-size: 14px; color: #A6ABB3; line-height: 1.4">State readable in under a second, at arm's length.</span></li>
+      <li style="background: #17191C; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 17px">Thumb-first</span><span style="font-size: 14px; color: #A6ABB3; line-height: 1.4">Every critical action is one tap or one press.</span></li>
+      <li style="background: #17191C; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 17px">Works with gloves</span><span style="font-size: 14px; color: #A6ABB3; line-height: 1.4">60 pt targets for anything you hit while shooting.</span></li>
+      <li style="background: #17191C; border-radius: 14px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px"><span style="font-weight: 600; font-size: 17px">Never colour alone</span><span style="font-size: 14px; color: #A6ABB3; line-height: 1.4">Status is colour + glyph + word + haptic.</span></li>
+    </ol>
+  </header>
+
+  <section style="display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #2E3238; padding-bottom: 12px">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 600">Ground · dark (default)</h2>
+      <span style="font-size: 14px; color: #868C96">Contrast measured on ink-1</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 16px">
+      <sc-for list="{{ground}}" as="s" hint-placeholder-count="8">
+        <div style="display: flex; flex-direction: column; gap: 10px">
+          <div style="height: 112px; border-radius: 14px; background: {{s.hex}}; border: 1px solid #2E3238; box-sizing: border-box; display: flex; align-items: flex-end; padding: 10px 12px; color: {{s.ink}}; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px">{{s.ratio}}</div>
+          <div style="display: flex; flex-direction: column; gap: 2px">
+            <span style="font-size: 15px; font-weight: 600">{{s.name}}</span>
+            <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #A6ABB3">{{s.hex}}</span>
+            <span style="font-size: 13px; color: #868C96; line-height: 1.35">{{s.role}}</span>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display: flex; flex-direction: column; gap: 20px">
+    <div style="display: flex; align-items: baseline; justify-content: space-between; border-bottom: 1px solid #2E3238; padding-bottom: 12px">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 600">Signal · the only colours with meaning</h2>
+      <span style="font-size: 14px; color: #868C96">Lightness steps apart (amber › green › blue › fault) so they survive colour-blindness</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+      <sc-for list="{{signals}}" as="s" hint-placeholder-count="4">
+        <div style="background: #17191C; border-radius: 18px; overflow: hidden; display: flex; flex-direction: column">
+          <div style="height: 120px; background: {{s.hex}}; color: #000000; padding: 16px 18px; box-sizing: border-box; display: flex; justify-content: space-between; align-items: flex-start">
+            <span style="font-size: 40px; line-height: 1; font-weight: 600">{{s.glyph}}</span>
+            <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; font-weight: 600">{{s.ratio}}</span>
+          </div>
+          <div style="padding: 18px; display: flex; flex-direction: column; gap: 10px">
+            <div style="display: flex; justify-content: space-between; align-items: baseline">
+              <span style="font-size: 20px; font-weight: 600">{{s.name}}</span>
+              <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #A6ABB3">{{s.token}}</span>
+            </div>
+            <div style="font-size: 14px; color: #A6ABB3; line-height: 1.45">{{s.means}}</div>
+            <div style="display: flex; gap: 8px; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">
+              <span>dark {{s.hex}}</span><span>·</span><span>light {{s.light}}</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 32px">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 12px">Ground · light (iPhone &amp; iPad, follows system)</h2>
+      <div style="background: #F4F4F1; border-radius: 18px; padding: 20px; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px">
+        <sc-for list="{{light}}" as="s" hint-placeholder-count="6">
+          <div style="display: flex; flex-direction: column; gap: 8px">
+            <div style="height: 64px; border-radius: 12px; background: {{s.hex}}; border: 1px solid #DADBD6; box-sizing: border-box"></div>
+            <span style="font-size: 13px; font-weight: 600; color: #121316">{{s.name}}</span>
+            <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 11px; color: #5A5F68">{{s.hex}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <h2 style="margin: 0; font-size: 22px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 12px">Rules</h2>
+      <ul style="margin: 0; padding: 0 0 0 18px; display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.45; color: #A6ABB3">
+        <li>Watch, Island and Smart Stack are always ink-0. The phone follows the system appearance.</li>
+        <li>Signal colours fill only status: dots, rings, chips, banners. Text on a signal fill is ink-0.</li>
+        <li>Hollow means unconfirmed. A shot the camera never acknowledged is drawn as an outline and labelled “sent”, never “taken”.</li>
+        <li>No gradients, no brand-maker colours. Camera brands appear as text badges.</li>
+      </ul>
+    </div>
+  </section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      ground: [
+        { name: 'ink-0', hex: '#000000', ink: '#868C96', ratio: '', role: 'OLED ground: watch, Island, Smart Stack' },
+        { name: 'ink-1', hex: '#0E0F11', ink: '#868C96', ratio: '', role: 'App ground, iPhone and iPad dark' },
+        { name: 'ink-2', hex: '#17191C', ink: '#868C96', ratio: '', role: 'Card, list row, sheet' },
+        { name: 'ink-3', hex: '#22252A', ink: '#A6ABB3', ratio: '', role: 'Raised, pressed, chip' },
+        { name: 'line', hex: '#2E3238', ink: '#A6ABB3', ratio: '', role: 'Hairline, ring track, divider' },
+        { name: 'fg-3', hex: '#868C96', ink: '#000000', ratio: '5.7 : 1', role: 'Hints, units, gesture line' },
+        { name: 'fg-2', hex: '#A6ABB3', ink: '#000000', ratio: '8.3 : 1', role: 'Secondary text, labels' },
+        { name: 'fg', hex: '#F4F4F2', ink: '#000000', ratio: '17.4 : 1', role: 'Primary text, shutter idle' }
+      ],
+      signals: [
+        { name: 'Pending', token: 'signal.pending', glyph: '◐', hex: '#FFB020', light: '#9A5800', ratio: '10.5 : 1', means: 'Focusing (half-press sent) · Connecting… · Release-delay countdown · No GPS fix after 30 s · Pairing in progress' },
+        { name: 'Confirmed', token: 'signal.confirmed', glyph: '✓', hex: '#2CC56A', light: '#0E7A3C', ratio: '8.5 : 1', means: 'Focused · Fired, confirmed by the camera · Connected · GPS fix good · Clock sync done' },
+        { name: 'Location', token: 'signal.location', glyph: '◎', hex: '#5AB0FF', light: '#0A64C2', ratio: '8.3 : 1', means: 'Geotag session running · Push sent · Current fix on the map · Accuracy readout' },
+        { name: 'Fault', token: 'signal.fault', glyph: '!', hex: '#FF6A4D', light: '#C73A1E', ratio: '6.8 : 1', means: 'Not confirmed · Busy · Pair again · Bluetooth or location off · No card · Camera battery low' }
+      ],
+      light: [
+        { name: 'bg', hex: '#F4F4F1' },
+        { name: 'surface', hex: '#FFFFFF' },
+        { name: 'raised', hex: '#EBEBE7' },
+        { name: 'line', hex: '#DADBD6' },
+        { name: 'fg-2', hex: '#5A5F68' },
+        { name: 'fg', hex: '#121316' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

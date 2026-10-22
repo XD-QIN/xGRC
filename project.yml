@@ -1,0 +1,236 @@
+# XcodeGen spec for the xGRC Xcode project. Generate with:
+#   brew install xcodegen && xcodegen generate
+# then open xGRC.xcodeproj. The generated project, Info.plists and entitlements
+# are not committed; this file is the source of truth.
+#
+# Before the first device build, put your Apple Developer team and a bundle-ID
+# prefix you own in Config/Local.xcconfig (git-ignored; see
+# Config/Signing.xcconfig). Keep them out of this file. The App Group is
+# group.<prefix>; register it for all four targets.
+name: xGRC
+configFiles:
+  Debug: Config/Signing.xcconfig
+  Release: Config/Signing.xcconfig
+options:
+  bundleIdPrefix: com.example.xgrc
+  createIntermediateGroups: true
+  # English plus the twelve languages xMosaique ships (Apps/Shared/Localization).
+  developmentLanguage: en
+  deploymentTarget:
+    iOS: "17.0"
+    watchOS: "10.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "2"
+    CODE_SIGN_STYLE: Automatic
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+packages:
+  xGRCCore:
+    path: Packages/xGRCCore
+targets:
+  # iPhone and iPad. One App Store record: this app plus the watch app, which
+  # runs independently of it (users can install either or both).
+  xGRC-iOS:
+    type: application
+    platform: iOS
+    sources:
+      - path: Apps/xGRC-iOS
+      - path: Apps/Shared/App
+      - path: Apps/Shared/Intents
+      - path: Apps/Shared/Localization
+      - path: Apps/Shared/LiveActivity
+    dependencies:
+      - package: xGRCCore
+        product: DesignKit
+      - package: xGRCCore
+        product: BLEKit
+      - package: xGRCCore
+        product: CameraKit
+      - package: xGRCCore
+        product: LocationKit
+      - package: xGRCCore
+        product: SessionKit
+      - package: xGRCCore
+        product: Persistence
+      - package: xGRCCore
+        product: SharedState
+      - target: xGRC-Widgets-iOS
+      - target: xGRC-watchOS
+    info:
+      path: Apps/xGRC-iOS/Info.plist
+      properties:
+        CFBundleDisplayName: xGRC
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        XGRCAppGroup: group.$(XGRC_BUNDLE_PREFIX)
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIBackgroundModes:
+          - bluetooth-central
+          - location
+        NSSupportsLiveActivities: true
+        CFBundleURLTypes:
+          - CFBundleURLName: xgrc
+            CFBundleURLSchemes:
+              - xgrc
+        NSBluetoothAlwaysUsageDescription: xGRC connects to your camera over Bluetooth to fire the shutter and send your location for geotagging.
+        NSLocationWhenInUseUsageDescription: xGRC sends your location to the connected camera so your photos are geotagged, including while the phone is locked during a geotag session.
+        # AccessorySetupKit (Sony picker) is off until Phase 6; see the Phase 4 doc in Dev_Doc.
+    entitlements:
+      path: Apps/xGRC-iOS/xGRC.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.$(XGRC_BUNDLE_PREFIX)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(XGRC_BUNDLE_PREFIX)
+        PRODUCT_NAME: xGRC
+        TARGETED_DEVICE_FAMILY: "1,2"
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  xGRC-Widgets-iOS:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: Apps/xGRC-Widgets-iOS
+      - path: Apps/Shared/Intents
+      - path: Apps/Shared/Localization
+      - path: Apps/Shared/LiveActivity
+    dependencies:
+      - package: xGRCCore
+        product: DesignKit
+      - package: xGRCCore
+        product: SharedState
+    info:
+      path: Apps/xGRC-Widgets-iOS/Info.plist
+      properties:
+        CFBundleDisplayName: xGRC
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        XGRCAppGroup: group.$(XGRC_BUNDLE_PREFIX)
+        NSSupportsLiveActivities: true
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: Apps/xGRC-Widgets-iOS/xGRCWidgets.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.$(XGRC_BUNDLE_PREFIX)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(XGRC_BUNDLE_PREFIX).widgets
+        PRODUCT_NAME: xGRCWidgets
+        TARGETED_DEVICE_FAMILY: "1,2"
+        # The shared intents leave out ForegroundContinuableIntent here: iOS
+        # app extensions cannot use it, and this one shoots through
+        # LiveActivityIntent instead (architecture doc, platform constraints).
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: $(inherited) WIDGET_EXTENSION
+  # The watch app: fully independent at runtime, with the iOS app as its
+  # companion in the store.
+  xGRC-watchOS:
+    type: application
+    platform: watchOS
+    sources:
+      - path: Apps/xGRC-watchOS
+      - path: Apps/Shared/App
+      - path: Apps/Shared/Intents
+      - path: Apps/Shared/Localization
+    dependencies:
+      - package: xGRCCore
+        product: DesignKit
+      - package: xGRCCore
+        product: BLEKit
+      - package: xGRCCore
+        product: CameraKit
+      - package: xGRCCore
+        product: LocationKit
+      - package: xGRCCore
+        product: SessionKit
+      - package: xGRCCore
+        product: Persistence
+      - package: xGRCCore
+        product: SharedState
+      - target: xGRC-Widgets-watchOS
+    info:
+      path: Apps/xGRC-watchOS/Info.plist
+      properties:
+        CFBundleDisplayName: xGRC
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        XGRCAppGroup: group.$(XGRC_BUNDLE_PREFIX)
+        WKApplication: true
+        WKRunsIndependentlyOfCompanionApp: true
+        WKCompanionAppBundleIdentifier: $(XGRC_BUNDLE_PREFIX)
+        UIBackgroundModes:
+          - bluetooth-central
+          - location
+        NSBluetoothAlwaysUsageDescription: xGRC connects to your camera over Bluetooth to fire the shutter and send your location for geotagging.
+        NSLocationWhenInUseUsageDescription: xGRC sends your location to the connected camera so your photos are geotagged.
+    entitlements:
+      path: Apps/xGRC-watchOS/xGRC.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.$(XGRC_BUNDLE_PREFIX)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(XGRC_BUNDLE_PREFIX).watchkitapp
+        PRODUCT_NAME: xGRC
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  xGRC-Widgets-watchOS:
+    type: app-extension
+    platform: watchOS
+    sources:
+      - path: Apps/xGRC-Widgets-watchOS
+      - path: Apps/Shared/Intents
+      - path: Apps/Shared/Localization
+    dependencies:
+      - package: xGRCCore
+        product: DesignKit
+      - package: xGRCCore
+        product: SharedState
+    info:
+      path: Apps/xGRC-Widgets-watchOS/Info.plist
+      properties:
+        CFBundleDisplayName: xGRC
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        XGRCAppGroup: group.$(XGRC_BUNDLE_PREFIX)
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+    entitlements:
+      path: Apps/xGRC-Widgets-watchOS/xGRCWidgets.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.$(XGRC_BUNDLE_PREFIX)
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: $(XGRC_BUNDLE_PREFIX).watchkitapp.widgets
+        PRODUCT_NAME: xGRCWidgets
+        # watchOS app extensions refuse ForegroundContinuableIntent too (first
+        # build, October 2026), so the tile's Shoot says "Open xGRC" when it
+        # runs in this extension.
+        SWIFT_ACTIVE_COMPILATION_CONDITIONS: $(inherited) WIDGET_EXTENSION
+schemes:
+  xGRC-iOS:
+    build:
+      targets:
+        xGRC-iOS: all
+    run:
+      config: Debug
+  xGRC-watchOS:
+    build:
+      targets:
+        xGRC-watchOS: all
+    run:
+      config: Debug

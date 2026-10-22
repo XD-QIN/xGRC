@@ -1,0 +1,213 @@
+{
+  "headline": {
+    "fontFile": "assets/HankenGrotesk-Bold.ttf",
+    "capHeightRatio": 0.697,
+    "tracking": -0.0374,
+    "colour": "#FFFFFF"
+  },
+  "base": {
+    "canvas": [
+      1290,
+      2796
+    ],
+    "frameY": 351,
+    "frameH": 2288,
+    "border": 11,
+    "borderColour": "#2C2C2C",
+    "bezel": 19,
+    "capHeight": 59.8,
+    "baselines": [
+      171.1,
+      269.5
+    ]
+  },
+  "devices": {
+    "iphone": {
+      "label": "iPhone 17 Pro Max simulator, 6.9\"",
+      "capture": [
+        1320,
+        2868
+      ],
+      "paintOut": [
+        [
+          0,
+          0,
+          1320,
+          165
+        ]
+      ],
+      "bezelScale": 1.0,
+      "radiusRatio": 0.0981
+    },
+    "duo-outer": {
+      "label": "iPhone Duo simulator, outer display",
+      "capture": [
+        1398,
+        2034
+      ],
+      "paintOut": [
+        [
+          1146,
+          225,
+          252,
+          255
+        ]
+      ],
+      "bezelScale": 1.0,
+      "radiusRatio": 0.0981
+    },
+    "ipad": {
+      "label": "iPad Pro 13-inch (M5) simulator",
+      "capture": [
+        2064,
+        2752
+      ],
+      "paintOut": [
+        [
+          0,
+          0,
+          2064,
+          64
+        ],
+        [
+          2000,
+          2688,
+          64,
+          64
+        ]
+      ],
+      "bezelScale": 1.8,
+      "radiusRatio": 0.035
+    },
+    "duo-inner": {
+      "label": "iPhone Duo simulator, inner display (landscape)",
+      "capture": [
+        2853,
+        2007
+      ],
+      "paintOut": [
+        [
+          2580,
+          70,
+          273,
+          250
+        ]
+      ],
+      "bezelScale": 1.0,
+      "radiusRatio": 0.05
+    }
+  },
+  "outputs": [
+    {
+      "name": "1290x2796",
+      "device": "iphone"
+    },
+    {
+      "name": "1284x2778",
+      "device": "iphone"
+    },
+    {
+      "name": "1398x2034",
+      "device": "duo-outer"
+    },
+    {
+      "name": "2853x2007",
+      "device": "duo-inner"
+    },
+    {
+      "name": "2064x2752",
+      "device": "ipad"
+    }
+  ],
+  "watch": [
+    {
+      "name": "watch-422x514",
+      "device": "watch-ultra",
+      "scenes": [
+        "session",
+        "shots",
+        "bulb",
+        "timelapse",
+        "geotag",
+        "controls",
+        "cameras"
+      ]
+    },
+    {
+      "name": "watch-416x496",
+      "device": "watch-46",
+      "scenes": [
+        "session",
+        "shots",
+        "bulb",
+        "timelapse",
+        "geotag",
+        "controls",
+        "cameras"
+      ]
+    }
+  ],
+  "frames": [
+    {
+      "id": "01-your-camera-remote",
+      "lines": [
+        "A remote for your camera.",
+        "No dongle, no maker app."
+      ],
+      "scene": "session",
+      "real": "iphone/01-real-sony.png"
+    },
+    {
+      "id": "02-fired-means-fired",
+      "lines": [
+        "It says fired only when",
+        "the camera confirms it."
+      ],
+      "scene": "shots"
+    },
+    {
+      "id": "03-timed-bulb",
+      "lines": [
+        "Set a bulb time.",
+        "One tap, it closes itself."
+      ],
+      "scene": "bulb"
+    },
+    {
+      "id": "04-timelapse",
+      "lines": [
+        "Timelapses with",
+        "no cable to carry."
+      ],
+      "scene": "timelapse"
+    },
+    {
+      "id": "05-gps-in-every-photo",
+      "lines": [
+        "Your phone’s GPS,",
+        "in every photo."
+      ],
+      "scene": "geotag"
+    },
+    {
+      "id": "06-mirrorless-and-compact",
+      "lines": [
+        "Made for mirrorless",
+        "and compact cameras."
+      ],
+      "scene": "cameras",
+      "skip": [
+        "ipad",
+        "duo-inner"
+      ]
+    },
+    {
+      "id": "07-release-delay",
+      "lines": [
+        "A release delay,",
+        "hands off the camera."
+      ],
+      "scene": "delay"
+    }
+  ]
+}

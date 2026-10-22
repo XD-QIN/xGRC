@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>xGRC Type, space and shape</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5AB0FF}a:hover{color:#8CC8FF}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1180px; box-sizing: border-box; padding: 72px; background: #0E0F11; color: #F4F4F2; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 48px">
+
+  <header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #868C96">xGRC design system · 02 Type, space &amp; shape</div>
+      <h1 style="margin: 0; font-size: 56px; line-height: 1; font-weight: 700; letter-spacing: -0.02em">SF Pro for words, SF Mono for numbers</h1>
+    </div>
+    <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A6ABB3; max-width: 420px">Native SwiftUI text styles, so Dynamic Type scales everything. Every number that changes while you watch it (accuracy, push age, counters, countdowns) is monospaced with tabular figures so it never jitters.</p>
+  </header>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 56px; flex: 1">
+
+    <section style="display: flex; flex-direction: column; gap: 0">
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #868C96; padding-bottom: 10px; border-bottom: 1px solid #2E3238">
+        <span>SwiftUI style</span><span>pt / wt</span><span>In use</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.largeTitle</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">34 / 700</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 34px; font-weight: 700; letter-spacing: -0.01em">Cameras</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.title</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">28 / 600</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 28px; font-weight: 600">Sony α7C II</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.title3</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">20 / 600</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 20px; font-weight: 600">Geotagging</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.headline</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">17 / 600</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 17px; font-weight: 600">Connected</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.body</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">17 / 400</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 17px">Put the camera in pairing mode</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.subheadline</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">15 / 400</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 15px; color: #A6ABB3">tap = focus · 2× = shoot · hold = bulb</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.footnote</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">13 / 400</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 13px; color: #A6ABB3">Looking for α7C II</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">.caption · caps</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">12 / 600</span>
+        <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #868C96">SONY · −52 dBm</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">readout.xl</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">56 / 500</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-variant-numeric: tabular-nums; font-size: 56px; font-weight: 500; letter-spacing: -0.02em">00:42:17</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">readout.l</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">28 / 500</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-variant-numeric: tabular-nums; font-size: 28px; font-weight: 500">±4 m  ·  6 s</span>
+      </div>
+      <div style="display: grid; grid-template-columns: 150px 70px minmax(0, 1fr); gap: 16px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid #22252A">
+        <span style="font-size: 14px; color: #A6ABB3">readout.s</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">15 / 500</span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-variant-numeric: tabular-nums; font-size: 15px; font-weight: 500">12 ✓ · 13 ↑</span>
+      </div>
+      <p style="margin: 18px 0 0; font-size: 14px; line-height: 1.5; color: #868C96">watchOS uses the same names one step down (Title 3 = 19 pt, Body = 17 pt on 45 mm). Readouts use <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; color: #A6ABB3">.monospacedDigit()</span> on SF Pro where a full mono face would feel heavy.</p>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 36px">
+
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Space · 4 pt grid</h2>
+        <sc-for list="{{space}}" as="s" hint-placeholder-count="7">
+          <div style="display: grid; grid-template-columns: 80px 48px minmax(0, 1fr); gap: 12px; align-items: center">
+            <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #A6ABB3">{{s.name}}</span>
+            <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #868C96">{{s.v}}</span>
+            <div style="display: flex; align-items: center; gap: 12px"><div style="height: 12px; width: {{s.px}}; background: #5AB0FF; border-radius: 2px"></div><span style="font-size: 13px; color: #868C96">{{s.use}}</span></div>
+          </div>
+        </sc-for>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Shape · continuous corners</h2>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px">
+          <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 56px; background: #22252A; border-radius: 10px"></div><span style="font-size: 13px">chip · 10</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 56px; background: #22252A; border-radius: 14px"></div><span style="font-size: 13px">card · 14</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 56px; background: #22252A; border-radius: 22px"></div><span style="font-size: 13px">sheet · 22</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 56px; width: 56px; background: #22252A; border-radius: 999px"></div><span style="font-size: 13px">full · shutter, dot</span></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Targets · sized for gloves</h2>
+        <div style="display: flex; align-items: flex-end; gap: 24px">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><div style="width: 44px; height: 44px; border: 1px dashed #868C96; border-radius: 10px; box-sizing: border-box"></div><span style="font-size: 12px; color: #A6ABB3">44 min</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><div style="width: 60px; height: 60px; border: 1px dashed #A6ABB3; border-radius: 14px; box-sizing: border-box"></div><span style="font-size: 12px; color: #A6ABB3">60 shooting</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><div style="width: 110px; height: 110px; border: 2px solid #F4F4F2; border-radius: 999px; box-sizing: border-box"></div><span style="font-size: 12px; color: #A6ABB3">110 watch shutter</span></div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px"><div style="width: 140px; height: 140px; border: 2px solid #F4F4F2; border-radius: 999px; box-sizing: border-box"></div><span style="font-size: 12px; color: #A6ABB3">140 phone shutter</span></div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Haptics &amp; motion</h2>
+        <sc-for list="{{haptics}}" as="h" hint-placeholder-count="5">
+          <div style="display: grid; grid-template-columns: 130px minmax(0, 1fr) minmax(0, 1fr); gap: 12px; font-size: 13px; line-height: 1.4">
+            <span style="font-weight: 600">{{h.event}}</span>
+            <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #A6ABB3">{{h.haptic}}</span>
+            <span style="color: #868C96">{{h.motion}}</span>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1180}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      space: [
+        { name: 'space.1', v: '4', px: '4px', use: 'glyph to label' },
+        { name: 'space.2', v: '8', px: '8px', use: 'inside chips' },
+        { name: 'space.3', v: '12', px: '12px', use: 'row content' },
+        { name: 'space.4', v: '16', px: '16px', use: 'screen margin, card padding' },
+        { name: 'space.5', v: '24', px: '24px', use: 'between groups' },
+        { name: 'space.6', v: '32', px: '32px', use: 'around the shutter' },
+        { name: 'space.7', v: '48', px: '48px', use: 'section breaks (iPad)' }
+      ],
+      haptics: [
+        { event: 'Focused', haptic: 'watch .click · iOS impact .light', motion: 'Ring fills green, 160 ms' },
+        { event: 'Fired, confirmed', haptic: 'watch .success · iOS .success', motion: 'Disc flashes fg, 120 ms' },
+        { event: 'Not confirmed', haptic: 'watch .failure · iOS .error', motion: 'Disc empties to an outline' },
+        { event: 'Delay release', haptic: 'one .notification, once', motion: 'Countdown ring drains linearly' },
+        { event: 'Reduce Motion', haptic: 'unchanged', motion: 'No ring animation; seconds only' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

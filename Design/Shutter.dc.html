@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>xGRC Shutter button</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5AB0FF}a:hover{color:#8CC8FF}
+button{font:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1060px; box-sizing: border-box; padding: 72px; background: #0E0F11; color: #F4F4F2; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 44px">
+
+  <header style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: end">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #868C96">xGRC design system · 03 Shutter button</div>
+      <h1 style="margin: 0; font-size: 56px; line-height: 1; font-weight: 700; letter-spacing: -0.02em">One button, one gesture model</h1>
+      <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A6ABB3">The same control on iPhone, iPad, watch and the Island. It never claims a shot the camera did not confirm: confirmed is filled, unconfirmed is hollow.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px">
+      <div style="background: #17191C; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 22px; font-weight: 500">tap</span><span style="font-size: 15px; font-weight: 600">Focus</span><span style="font-size: 13px; color: #A6ABB3; line-height: 1.4">Half-press on touch-down, held 3 s</span></div>
+      <div style="background: #17191C; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 22px; font-weight: 500">2×</span><span style="font-size: 15px; font-weight: 600">Shoot</span><span style="font-size: 13px; color: #A6ABB3; line-height: 1.4">Full press on second touch-down. Watch: hand Double Tap</span></div>
+      <div style="background: #17191C; border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 22px; font-weight: 500">hold</span><span style="font-size: 15px; font-weight: 600">Bulb</span><span style="font-size: 13px; color: #A6ABB3; line-height: 1.4">Latches open; the next tap releases</span></div>
+    </div>
+  </header>
+
+  <div style="display: grid; grid-template-columns: 520px minmax(0, 1fr); gap: 48px; flex: 1">
+
+    <section style="background: #000000; border-radius: 22px; padding: 28px; display: flex; flex-direction: column; align-items: center; gap: 20px">
+      <div style="align-self: stretch; display: flex; justify-content: space-between; font-size: 13px; color: #868C96"><span>Live specimen · 2×</span><span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace">{{cur.token}}</span></div>
+      <button type="button" aria-label="Shutter. Tap to step to the next state" onClick="{{next}}" style="width: 240px; height: 240px; border-radius: 999px; border: {{cur.ringW2}} {{cur.ringStyle}} {{cur.ring}}; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center; cursor: pointer; box-sizing: border-box">
+        <span style="width: 192px; height: 192px; border-radius: 999px; background: {{cur.disc}}; border: 4px solid {{cur.discLine}}; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: {{cur.discInk}}">{{cur.inner}}</span>
+      </button>
+      <div style="display: flex; flex-direction: column; align-items: center; gap: 6px">
+        <span style="font-size: 22px; font-weight: 600; color: {{cur.capColor}}">{{cur.caption}}</span>
+        <span style="font-size: 14px; color: #868C96">tap = focus · 2× = shoot · hold = bulb</span>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px">
+        <sc-for list="{{states}}" as="s" hint-placeholder-count="6">
+          <button type="button" onClick="{{s.pick}}" style="min-height: 44px; padding: 0 16px; border-radius: 999px; border: 1px solid {{s.pillLine}}; background: {{s.pillBg}}; color: {{s.pillInk}}; font-size: 14px; font-weight: 600; cursor: pointer">{{s.name}}</button>
+        </sc-for>
+      </div>
+      <dl style="align-self: stretch; margin: 0; display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 8px 12px; font-size: 13px; line-height: 1.4; border-top: 1px solid #22252A; padding-top: 16px">
+        <dt style="color: #868C96">Haptic</dt><dd style="margin: 0; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #A6ABB3">{{cur.haptic}}</dd>
+        <dt style="color: #868C96">VoiceOver</dt><dd style="margin: 0; color: #A6ABB3">{{cur.vo}}</dd>
+      </dl>
+    </section>
+
+    <section style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 16px">
+      <sc-for list="{{states}}" as="s" hint-placeholder-count="6">
+        <div style="background: #17191C; border-radius: 18px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+          <div style="width: 140px; height: 140px; border-radius: 999px; border: {{s.ringW}} {{s.ringStyle}} {{s.ring}}; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+            <div style="width: 112px; height: 112px; border-radius: 999px; background: {{s.disc}}; border: 3px solid {{s.discLine}}; box-sizing: border-box; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: {{s.discInk}}">{{s.inner}}</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center">
+            <span style="font-size: 15px; font-weight: 600; color: {{s.capColor}}">{{s.caption}}</span>
+            <span style="font-size: 12px; color: #868C96; line-height: 1.4">{{s.when}}</span>
+          </div>
+        </div>
+      </sc-for>
+      <div style="background: #17191C; border-radius: 18px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+        <div style="width: 140px; height: 140px; border-radius: 999px; background: conic-gradient(#FFB020 0 70%, #2E3238 70% 100%); display: flex; align-items: center; justify-content: center">
+          <div style="width: 128px; height: 128px; border-radius: 999px; background: #17191C; display: flex; align-items: center; justify-content: center">
+            <div style="width: 112px; height: 112px; border-radius: 999px; background: #22252A; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 44px; font-weight: 500; color: #FFB020">7</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center">
+          <span style="font-size: 15px; font-weight: 600; color: #FFB020">◐ Delay 10 s</span>
+          <span style="font-size: 12px; color: #868C96; line-height: 1.4">Ring drains; any tap cancels. Auto-focus, fire, one vibration at zero</span>
+        </div>
+      </div>
+      <div style="background: #17191C; border-radius: 18px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; gap: 14px">
+        <div style="width: 140px; height: 140px; border-radius: 999px; border: 6px solid #FFB020; box-sizing: border-box; display: flex; align-items: center; justify-content: center">
+          <div style="width: 112px; height: 112px; border-radius: 999px; background: #22252A; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px">
+            <div style="width: 22px; height: 22px; border-radius: 4px; background: #FFB020"></div>
+            <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 18px; font-weight: 500; color: #F4F4F2">01:24</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center">
+          <span style="font-size: 15px; font-weight: 600; color: #FFB020">◐ Bulb open</span>
+          <span style="font-size: 12px; color: #868C96; line-height: 1.4">Elapsed time counts up; tap releases. Hard cap 30 min</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { picked: 'focused' };
+  }
+  renderVals() {
+    var defs = [
+      { id: 'idle', name: 'Idle', token: 'shutter.idle', ring: '#F4F4F2', ringStyle: 'solid', ringW: '4px', ringW2: '6px', disc: '#F4F4F2', discLine: '#F4F4F2', discInk: '#000000', inner: 'Shutter', caption: 'Ready', capColor: '#F4F4F2', when: 'Connected, nothing held', haptic: '—', vo: 'Shutter, button. Actions: Focus, Shoot, Start bulb.' },
+      { id: 'focusing', name: 'Focusing', token: 'shutter.focusing', ring: '#FFB020', ringStyle: 'dashed', ringW: '4px', ringW2: '6px', disc: '#F4F4F2', discLine: '#F4F4F2', discInk: '#000000', inner: 'AF', caption: '◐ Focusing', capColor: '#FFB020', when: 'Half-press sent, waiting for the camera', haptic: '—', vo: 'Focusing.' },
+      { id: 'focused', name: 'Focused', token: 'shutter.focused', ring: '#2CC56A', ringStyle: 'solid', ringW: '6px', ringW2: '10px', disc: '#F4F4F2', discLine: '#F4F4F2', discInk: '#000000', inner: 'AF ✓', caption: '✓ Focused', capColor: '#2CC56A', when: 'Camera confirmed focus; 2× now shoots', haptic: 'watch .click · iOS impact .light', vo: 'Focused.' },
+      { id: 'fired', name: 'Fired', token: 'shutter.fired', ring: '#2CC56A', ringStyle: 'solid', ringW: '6px', ringW2: '10px', disc: '#2CC56A', discLine: '#2CC56A', discInk: '#000000', inner: '✓ 13', caption: '✓ Fired · confirmed', capColor: '#2CC56A', when: 'Camera acknowledged the exposure', haptic: 'watch .success · iOS notification .success', vo: 'Fired, confirmed.' },
+      { id: 'sent', name: 'Sent', token: 'shutter.sent', ring: '#A6ABB3', ringStyle: 'solid', ringW: '4px', ringW2: '6px', disc: 'transparent', discLine: '#A6ABB3', discInk: '#A6ABB3', inner: '↑ 13', caption: '↑ Sent', capColor: '#A6ABB3', when: 'Brand has no acknowledgement; never “taken”', haptic: 'watch .click · iOS impact .light', vo: 'Sent. This camera does not confirm shots.' },
+      { id: 'notconfirmed', name: 'Not confirmed', token: 'shutter.notConfirmed', ring: '#FF6A4D', ringStyle: 'solid', ringW: '4px', ringW2: '6px', disc: 'transparent', discLine: '#FF6A4D', discInk: '#FF6A4D', inner: '!', caption: '! Not confirmed', capColor: '#FF6A4D', when: 'Timeout, link lost, no card, camera in a menu', haptic: 'watch .failure · iOS notification .error', vo: 'Sent, not confirmed.' }
+    ];
+    var picked = this.state.picked;
+    var self = this;
+    var states = defs.map(function (d, i) {
+      var on = d.id === picked;
+      return Object.assign({}, d, {
+        pick: function () { self.setState({ picked: d.id }); },
+        pillBg: on ? '#F4F4F2' : 'transparent',
+        pillInk: on ? '#000000' : '#A6ABB3',
+        pillLine: on ? '#F4F4F2' : '#2E3238'
+      });
+    });
+    var idx = defs.findIndex(function (d) { return d.id === picked; });
+    var cur = defs[idx < 0 ? 0 : idx];
+    return {
+      states: states,
+      cur: cur,
+      next: function () { self.setState({ picked: defs[(idx + 1) % defs.length].id }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

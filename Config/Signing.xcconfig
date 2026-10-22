@@ -1,0 +1,12 @@
+// Signing for every xGRC target. These are placeholders: put your own Apple
+// Developer team and a bundle-ID prefix you own in Config/Local.xcconfig,
+// which git ignores and which overrides the values below. For example:
+//
+//   DEVELOPMENT_TEAM = ABCDE12345
+//   XGRC_BUNDLE_PREFIX = com.yourname.xgrc
+//
+// The App Group is group.$(XGRC_BUNDLE_PREFIX); register it for all four targets.
+DEVELOPMENT_TEAM =
+XGRC_BUNDLE_PREFIX = com.example.xgrc
+
+#include? "Local.xcconfig"

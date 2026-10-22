@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>xGRC Status and feedback</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5AB0FF}a:hover{color:#8CC8FF}
+button{font:inherit}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1060px; box-sizing: border-box; padding: 72px; background: #0E0F11; color: #F4F4F2; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 44px">
+
+  <header style="display: flex; justify-content: space-between; align-items: flex-end; gap: 48px">
+    <div style="display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #868C96">xGRC design system · 04 Status &amp; feedback</div>
+      <h1 style="margin: 0; font-size: 56px; line-height: 1; font-weight: 700; letter-spacing: -0.02em">Glyph + word + colour</h1>
+    </div>
+    <p style="margin: 0; font-size: 16px; line-height: 1.5; color: #A6ABB3; max-width: 520px">Every row in the product spec’s States &amp; errors table maps to one of these patterns. Copy is short, names the camera, and gives the fix in the camera’s own menu words.</p>
+  </header>
+
+  <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; flex: 1">
+
+    <section style="display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Link state · camera row</h2>
+        <div style="background: #17191C; border-radius: 14px; overflow: hidden">
+          <div style="display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 60px; padding: 0 16px; border-bottom: 1px solid #22252A">
+            <span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 999px; background: #2CC56A"></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">α7C II</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #868C96">SONY</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #2CC56A">Connected</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 60px; padding: 0 16px; border-bottom: 1px solid #22252A">
+            <span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #FFB020; box-sizing: border-box; background: linear-gradient(90deg, #FFB020 50%, transparent 50%)"></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">X-T5</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #868C96">FUJIFILM</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #FFB020">Connecting…</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 60px; padding: 0 16px; border-bottom: 1px solid #22252A">
+            <span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #868C96; box-sizing: border-box"></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">EOS R6 II</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #868C96">CANON · REMOTE MODE</span></span>
+            <span style="font-size: 15px; color: #A6ABB3">Saved</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 60px; padding: 0 16px; border-bottom: 1px solid #22252A">
+            <span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 999px; border: 2px dashed #868C96; box-sizing: border-box"></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">ZV-E10</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #868C96">SONY</span></span>
+            <span style="font-size: 15px; color: #A6ABB3">Off</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 60px; padding: 0 16px; border-bottom: 1px solid #22252A">
+            <span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 3px; background: #FF6A4D"></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">GR IIIx</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #868C96">RICOH</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #FF6A4D">Busy</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 20px minmax(0, 1fr) auto; gap: 12px; align-items: center; min-height: 60px; padding: 0 16px">
+            <span aria-hidden="true" style="width: 12px; height: 12px; border-radius: 999px; border: 2px solid #FF6A4D; box-sizing: border-box"></span>
+            <span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">Z6 III</span><span style="font-size: 12px; font-weight: 600; letter-spacing: 0.06em; color: #868C96">NIKON · REMOTE MODE</span></span>
+            <span style="font-size: 15px; font-weight: 600; color: #FF6A4D">Pair again</span>
+          </div>
+        </div>
+        <p style="margin: 0; font-size: 13px; line-height: 1.45; color: #868C96">Dot shape carries the state too: filled = live, half = in progress, ring = saved, dashed = powered off, square = busy, red ring = needs pairing.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Status strip · counter</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px">
+          <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 12px; border-radius: 10px; background: #22252A; font-size: 14px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #2CC56A"></span>Connected</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 12px; border-radius: 10px; background: #22252A; font-size: 14px; font-weight: 600"><span style="color: #5AB0FF">◎</span>GPS <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-weight: 500">±3 m</span></span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 12px; border-radius: 10px; background: #22252A; font-size: 14px; font-weight: 600"><span style="color: #FFB020">◐</span>GPS searching</span>
+          <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 12px; border-radius: 10px; background: #22252A; font-size: 14px; font-weight: 600"><span style="color: #FF6A4D">!</span>Camera battery low</span>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 16px; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-variant-numeric: tabular-nums">
+          <span style="font-size: 28px; font-weight: 500"><span style="color: #2CC56A">12 ✓</span> <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 15px; color: #A6ABB3">confirmed</span></span>
+          <span style="font-size: 28px; color: #2E3238">·</span>
+          <span style="font-size: 28px; font-weight: 500"><span style="color: #A6ABB3">13 ↑</span> <span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 15px; color: #A6ABB3">sent</span></span>
+        </div>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 28px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Banners &amp; notes</h2>
+        <div style="background: #17191C; border: 1px solid #FF6A4D; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 14px">
+          <span aria-hidden="true" style="flex: none; width: 28px; height: 28px; border-radius: 999px; background: #FF6A4D; color: #000000; display: flex; align-items: center; justify-content: center; font-weight: 700">!</span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Bluetooth is off</span><span style="font-size: 14px; color: #A6ABB3">xGRC needs Bluetooth to reach your camera.</span></span>
+          <a href="#" style="min-height: 44px; padding: 0 16px; border-radius: 10px; background: #F4F4F2; color: #000000; font-size: 15px; font-weight: 600; display: inline-flex; align-items: center; text-decoration: none">Settings</a>
+        </div>
+        <div style="background: #17191C; border: 1px solid #FFB020; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 14px">
+          <span aria-hidden="true" style="flex: none; width: 28px; height: 28px; border-radius: 999px; border: 2px solid #FFB020; box-sizing: border-box; background: linear-gradient(90deg, #FFB020 50%, transparent 50%)"></span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">No GPS fix — photos untagged</span><span style="font-size: 14px; color: #A6ABB3">Nothing is sent until a fix is valid. Move to open sky.</span></span>
+        </div>
+        <div style="background: #17191C; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 14px">
+          <span aria-hidden="true" style="flex: none; width: 28px; height: 28px; border-radius: 999px; border: 2px solid #868C96; box-sizing: border-box; color: #A6ABB3; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700">i</span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">Set the drive mode to Self-timer/Remote</span><span style="font-size: 14px; color: #A6ABB3">Canon Remote mode fires only in 2 s or 10 s Self-timer/Remote.</span></span>
+        </div>
+        <div style="background: #17191C; border: 1px solid #FF6A4D; border-radius: 14px; padding: 14px 16px; display: flex; align-items: center; gap: 14px">
+          <span aria-hidden="true" style="flex: none; width: 28px; height: 28px; border-radius: 3px; background: #FF6A4D"></span>
+          <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 16px; font-weight: 600">GR IIIx is busy</span><span style="font-size: 14px; color: #A6ABB3">Linked to another phone, watch or app. Disconnect it there.</span></span>
+          <button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #2E3238; background: #22252A; color: #F4F4F2; font-size: 15px; font-weight: 600">Retry</button>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Controls</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+          <button type="button" style="min-height: 60px; padding: 0 28px; border-radius: 14px; border: none; background: #F4F4F2; color: #000000; font-size: 17px; font-weight: 600">Pair</button>
+          <button type="button" style="min-height: 60px; padding: 0 22px; border-radius: 14px; border: none; background: #22252A; color: #F4F4F2; font-size: 17px; font-weight: 600">Intervalometer ›</button>
+          <button type="button" style="min-height: 60px; padding: 0 22px; border-radius: 14px; border: 1px solid #FF6A4D; background: transparent; color: #FF6A4D; font-size: 17px; font-weight: 600">Stop geotagging</button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; align-items: center">
+          <button type="button" aria-pressed="true" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #2CC56A; background: #2CC56A; color: #000000; font-size: 14px; font-weight: 700; letter-spacing: 0.06em">AF HOLD ✓</button>
+          <button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #2E3238; background: transparent; color: #A6ABB3; font-size: 14px; font-weight: 700; letter-spacing: 0.06em">AF HOLD</button>
+          <button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: none; background: #22252A; color: #F4F4F2; font-size: 14px; font-weight: 600">Delay <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; color: #FFB020">10 s</span> ›</button>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <h2 style="margin: 0; font-size: 20px; font-weight: 600; border-bottom: 1px solid #2E3238; padding-bottom: 10px">Voice</h2>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 20px; font-size: 14px; line-height: 1.4">
+          <span><span style="color: #2CC56A; font-weight: 600">Say</span> “Sent”, “Not confirmed”</span><span><span style="color: #FF6A4D; font-weight: 600">Never</span> “Taken” without an ack</span>
+          <span><span style="color: #2CC56A; font-weight: 600">Say</span> “Looking for α7C II”</span><span><span style="color: #FF6A4D; font-weight: 600">Never</span> “Error 0x9F”</span>
+          <span><span style="color: #2CC56A; font-weight: 600">Say</span> the camera’s menu words</span><span><span style="color: #FF6A4D; font-weight: 600">Never</span> blame the user</span>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1060}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

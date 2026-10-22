@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>xGRC iPhone Remote</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5AB0FF}a:hover{color:#8CC8FF}
+button{font:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; padding: 56px 16px 28px; background: #0E0F11; color: #F4F4F2; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 16px">
+
+  <nav style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+    <button type="button" aria-label="Cameras" style="width: 44px; height: 44px; border: none; border-radius: 999px; background: #17191C; color: #F4F4F2; display: flex; align-items: center; justify-content: center; padding: 0">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg>
+    </button>
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 2px">
+      <span style="font-size: 17px; font-weight: 600">α7C II</span>
+      <span style="font-size: 11px; font-weight: 600; letter-spacing: 0.08em; color: #868C96">SONY</span>
+    </div>
+    <button type="button" aria-label="Camera settings" style="width: 44px; height: 44px; border: none; border-radius: 999px; background: #17191C; color: #F4F4F2; display: flex; align-items: center; justify-content: center; padding: 0">
+      <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"></path></svg>
+    </button>
+  </nav>
+
+  <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap">
+    <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 12px; border-radius: 10px; background: #17191C; font-size: 14px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 999px; background: #2CC56A"></span>Connected</span>
+    <span style="display: inline-flex; align-items: center; gap: 8px; min-height: 32px; padding: 0 12px; border-radius: 10px; background: #17191C; font-size: 14px; font-weight: 600"><span style="color: #5AB0FF">◎</span>GPS <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-weight: 500">±3 m</span></span>
+  </div>
+
+  <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px">
+    <button type="button" aria-label="Shutter. Double tap to shoot" style="width: 172px; height: 172px; border-radius: 999px; border: 8px solid #2CC56A; background: transparent; padding: 0; display: flex; align-items: center; justify-content: center; box-sizing: border-box">
+      <span style="width: 140px; height: 140px; border-radius: 999px; background: #F4F4F2; color: #000000; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; letter-spacing: 0.08em">AF ✓</span>
+    </button>
+    <span style="font-size: 20px; font-weight: 600; color: #2CC56A">✓ Focused</span>
+    <span style="font-size: 15px; color: #868C96">tap = focus · 2× = shoot · hold = bulb</span>
+  </div>
+
+  <div style="display: flex; gap: 8px; justify-content: center">
+    <button type="button" aria-pressed="false" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: 1px solid #2E3238; background: transparent; color: #A6ABB3; font-size: 14px; font-weight: 700; letter-spacing: 0.06em">AF HOLD</button>
+    <button type="button" style="min-height: 44px; padding: 0 16px; border-radius: 10px; border: none; background: #22252A; color: #F4F4F2; font-size: 14px; font-weight: 600">Delay <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; color: #FFB020">10 s</span> ›</button>
+  </div>
+
+  <div style="display: flex; justify-content: center; align-items: baseline; gap: 10px; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-variant-numeric: tabular-nums; font-size: 17px; font-weight: 500">
+    <span style="color: #2CC56A">12 ✓</span><span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 14px; color: #A6ABB3">confirmed</span>
+    <span style="color: #2E3238">·</span>
+    <span style="color: #A6ABB3">13 ↑</span><span style="font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; font-size: 14px; color: #A6ABB3">sent</span>
+  </div>
+
+  <button type="button" style="min-height: 60px; border-radius: 14px; border: none; background: #17191C; color: #F4F4F2; font-size: 17px; font-weight: 600; display: flex; align-items: center; justify-content: space-between; padding: 0 18px">Intervalometer<span style="color: #868C96">›</span></button>
+
+  <div style="min-height: 60px; border-radius: 14px; background: #17191C; display: flex; align-items: center; gap: 12px; padding: 0 8px 0 16px">
+    <span style="color: #5AB0FF; font-size: 18px">◎</span>
+    <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 15px; font-weight: 600">Geotag · sending</span><span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 12px; color: #A6ABB3">8 s ago · 142 pushes</span></span>
+    <button type="button" style="min-height: 44px; padding: 0 14px; border-radius: 10px; border: 1px solid #FF6A4D; background: transparent; color: #FF6A4D; font-size: 14px; font-weight: 600">Stop</button>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

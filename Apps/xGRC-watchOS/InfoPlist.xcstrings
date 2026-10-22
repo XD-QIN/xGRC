@@ -1,0 +1,196 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "CFBundleDisplayName" : {
+      "comment" : "Bundle display name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "xGRC"
+          }
+        }
+      }
+    },
+    "CFBundleName" : {
+      "comment" : "Bundle name",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "xGRC"
+          }
+        }
+      }
+    },
+    "NSBluetoothAlwaysUsageDescription" : {
+      "comment" : "Privacy - Bluetooth Always Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC verbindet sich per Bluetooth mit deiner Kamera, um auszulösen und deinen Standort für das Geotagging zu senden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC connects to your camera over Bluetooth to fire the shutter and send your location for geotagging."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC se conecta a tu cámara por Bluetooth para disparar y enviar tu ubicación para el geoetiquetado."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC se conecta a tu cámara por Bluetooth para disparar y enviar tu ubicación para el geoetiquetado."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC se connecte à votre appareil photo en Bluetooth pour déclencher et lui envoyer votre position pour le géomarquage."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC शटर फ़ायर करने और जियोटैगिंग के लिए आपका स्थान भेजने हेतु Bluetooth से आपके कैमरे से कनेक्ट होता है।"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC terhubung ke kamera Anda melalui Bluetooth untuk memicu rana dan mengirim lokasi Anda untuk geotagging."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC si connette alla tua fotocamera via Bluetooth per scattare e inviare la tua posizione per il geotagging."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRCはBluetoothでカメラに接続し、シャッターを切ったり、ジオタグ付けのために位置情報を送信したりします。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC는 Bluetooth로 카메라에 연결해 셔터를 작동하고, 지오태깅을 위해 위치를 보냅니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O xGRC se conecta à sua câmera por Bluetooth para disparar o obturador e enviar a sua localização para geomarcação."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC 通过蓝牙连接你的相机，用于释放快门，并发送你的位置以添加地理标记。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC 透過藍牙連線你的相機，用於釋放快門，並傳送你的位置以加上地理標記。"
+          }
+        }
+      }
+    },
+    "NSLocationWhenInUseUsageDescription" : {
+      "comment" : "Privacy - Location When In Use Usage Description",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC sendet deinen Standort an die verbundene Kamera, damit deine Fotos einen Geotag erhalten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC sends your location to the connected camera so your photos are geotagged."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC envía tu ubicación a la cámara conectada para geoetiquetar tus fotos."
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC envía tu ubicación a la cámara conectada para geoetiquetar tus fotos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC envoie votre position à l’appareil photo connecté pour géomarquer vos photos."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC आपका स्थान कनेक्ट किए गए कैमरे को भेजता है ताकि आपकी फ़ोटो जियोटैग हों।"
+          }
+        },
+        "id" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC mengirim lokasi Anda ke kamera yang terhubung agar foto Anda diberi geotag."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC invia la tua posizione alla fotocamera connessa così le tue foto ricevono il geotag."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRCは接続中のカメラに位置情報を送信し、写真にジオタグを付けます。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC는 연결된 카메라에 위치를 보내 사진에 지오태그가 기록되게 합니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O xGRC envia a sua localização à câmera conectada para que as suas fotos sejam geomarcadas."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC 会将你的位置发送到已连接的相机，为照片添加地理标记。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "xGRC 會將你的位置傳送到已連線的相機，為照片加上地理標記。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

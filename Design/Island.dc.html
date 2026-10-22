@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>xGRC Dynamic Island and Lock Screen</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Geist+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#5AB0FF}a:hover{color:#8CC8FF}
+button{font:inherit}
+</style>
+</helmet>
+<div style="width: 1410px; height: 700px; box-sizing: border-box; padding: 40px 48px; background: #0E0F11; color: #F4F4F2; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Geist', system-ui, sans-serif; display: flex; flex-direction: column; gap: 32px">
+
+  <header style="display: flex; justify-content: space-between; align-items: baseline; gap: 24px">
+    <span style="font-size: 22px; font-weight: 600">Dynamic Island, Lock Screen &amp; Smart Stack</span>
+    <span style="font-size: 14px; color: #868C96">Drawn at 1.5× · Shutter shows only when the brand can shoot in the background</span>
+  </header>
+
+  <div style="display: grid; grid-template-columns: auto auto minmax(0, 1fr); gap: 48px; align-items: start">
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+      <div style="width: 380px; height: 56px; border-radius: 999px; background: #000000; box-sizing: border-box; padding: 0 22px; display: flex; align-items: center; justify-content: space-between">
+        <span style="display: flex; align-items: center; gap: 8px">
+          <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4F4F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+          <span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 999px; background: #2CC56A"></span>
+        </span>
+        <span style="display: flex; align-items: center; gap: 6px; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 17px; font-weight: 500"><span style="color: #5AB0FF">◎</span>±4 m <span style="color: #868C96">6 s</span></span>
+      </div>
+      <figcaption style="font-size: 14px; color: #A6ABB3">Compact · camera + link dot | GPS accuracy + push age</figcaption>
+    </figure>
+
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px; align-items: center">
+      <div style="width: 56px; height: 56px; border-radius: 999px; background: #000000; display: flex; align-items: center; justify-content: center; position: relative">
+        <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F4F4F2" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+        <span aria-hidden="true" style="position: absolute; right: 10px; top: 10px; width: 9px; height: 9px; border-radius: 999px; background: #2CC56A"></span>
+      </div>
+      <figcaption style="font-size: 14px; color: #A6ABB3">Minimal</figcaption>
+    </figure>
+
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+      <div style="width: 560px; border-radius: 66px; background: #000000; box-sizing: border-box; padding: 28px 36px 26px; display: flex; flex-direction: column; gap: 14px">
+        <div style="display: flex; justify-content: space-between; align-items: center"><span style="font-size: 22px; font-weight: 600">Sony α7C II</span><span style="display: flex; align-items: center; gap: 8px; font-size: 17px; font-weight: 600; color: #2CC56A"><span aria-hidden="true" style="width: 10px; height: 10px; border-radius: 999px; background: #2CC56A"></span>Linked</span></div>
+        <div style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-variant-numeric: tabular-nums; font-size: 18px; font-weight: 500; color: #A6ABB3"><span style="color: #5AB0FF">◎</span> ±4 m · 6 s · <span style="color: #2CC56A">12 ✓</span> · 13 ↑</div>
+        <button type="button" style="align-self: center; min-height: 60px; min-width: 260px; border-radius: 999px; border: none; background: #F4F4F2; color: #000000; font-size: 19px; font-weight: 700; letter-spacing: 0.04em; display: flex; align-items: center; justify-content: center; gap: 10px"><span aria-hidden="true" style="width: 20px; height: 20px; border-radius: 999px; border: 3px solid #000000; box-sizing: border-box"></span>Shutter</button>
+      </div>
+      <figcaption style="font-size: 14px; color: #A6ABB3">Expanded · ≤ 160 pt: two text rows and one button (a LiveActivityIntent)</figcaption>
+    </figure>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 560px repeat(2, minmax(0, 1fr)); gap: 48px; align-items: start">
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+      <div style="border-radius: 30px; background: #17191C; padding: 22px 26px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px 20px; align-items: center">
+        <span style="font-size: 19px; font-weight: 600">α7C II · Geotagging</span>
+        <span style="grid-row: span 2; width: 88px; height: 88px; border-radius: 999px; background: conic-gradient(#FFB020 0 70%, #2E3238 70% 100%); display: flex; align-items: center; justify-content: center"><span style="width: 76px; height: 76px; border-radius: 999px; background: #17191C; display: flex; align-items: center; justify-content: center; font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 30px; font-weight: 500; color: #FFB020">7</span></span>
+        <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace; font-size: 16px; color: #A6ABB3"><span style="color: #5AB0FF">◎</span> ±4 m · 6 s · <span style="color: #2CC56A">12 ✓</span> · 13 ↑</span>
+      </div>
+      <figcaption style="font-size: 14px; color: #A6ABB3">Lock Screen · release-delay countdown with Text(timerInterval:)</figcaption>
+    </figure>
+
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+      <div style="border-radius: 26px; background: #000000; border: 1px solid #22252A; padding: 18px 20px; display: flex; align-items: center; gap: 14px">
+        <span style="flex: 1; display: flex; flex-direction: column; gap: 4px"><span style="font-size: 16px; font-weight: 600">xGRC · α7C II</span><span style="font-size: 14px; color: #A6ABB3"><span style="color: #2CC56A">●</span> Linked · pushed <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace">9 s</span></span></span>
+        <button type="button" style="min-height: 52px; padding: 0 18px; border-radius: 999px; border: none; background: #F4F4F2; color: #000000; font-size: 16px; font-weight: 700">Shoot</button>
+      </div>
+      <figcaption style="font-size: 14px; color: #A6ABB3">Watch Smart Stack · its own tile, Double Tap while a session runs</figcaption>
+    </figure>
+
+    <figure style="margin: 0; display: flex; flex-direction: column; gap: 12px">
+      <div style="border-radius: 26px; background: #000000; border: 1px solid #22252A; padding: 18px 20px; display: flex; flex-direction: column; gap: 4px">
+        <span style="font-size: 12px; font-weight: 600; letter-spacing: 0.08em; color: #868C96">IPHONE · CAMERA</span>
+        <span style="font-size: 16px; font-weight: 600">α7C II</span>
+        <span style="font-size: 14px; color: #A6ABB3"><span style="color: #5AB0FF">◎</span> ±4 m · <span style="font-family: ui-monospace, 'SF Mono', 'Geist Mono', monospace">6 s</span></span>
+      </div>
+      <figcaption style="font-size: 14px; color: #A6ABB3">The phone’s activity on the watch · labelled, never a shutter</figcaption>
+    </figure>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1410,"height":700}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
