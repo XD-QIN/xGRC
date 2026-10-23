@@ -102,6 +102,7 @@ Everything beyond this overview lives in [`Dev_Doc/`](Dev_Doc):
 | [Localization](Dev_Doc/10-21-26_localization-03.md) | The thirteen languages, the in-app language setting, the string catalogs and how to add a string |
 | [Full review fixes](Dev_Doc/10-19-26_full-project-review-fixes-01.md) | Every finding of the 2026-10-19 code review, its outcome, and the device test checklist |
 | [Open-source release](Dev_Doc/10-21-26_open-source-gplv3-04.md) | The move to GPLv3, the fresh public history and what was kept out of it |
+| [Watch icon background](Dev_Doc/10-23-26_watch-icon-light-background-01.md) | Why the watch icon moved to a lighter slate ground, the options considered and the App Store checks |
 
 Code comments cite these as *product spec §*, *architecture doc §* and *protocol reference §* followed by the section name. The design-system boards are indexed in [`Design/README.md`](Design/README.md).
 
