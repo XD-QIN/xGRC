@@ -2,7 +2,7 @@
 
 Chosen 2026-10-15: concept 4 (Signal Lens) with an amber location pin in the lens.
 
-Colours: slate gradient ground `#6E8299` to `#4A5A6E` (pin hole `#4F6074`), with the Tally ring `#F4F4F2` and amber pin and arcs `#FFB020`. The ground was near-black `#0E0F11` until 2026-10-23, when App Review rejected it because the watch icon didn't read as a circle on the black watch face; the iPhone and iPad icon moved to the same ground so the two match. See [the icon background doc](../../Dev_Doc/10-23-26_watch-icon-light-background-01.md).
+Colours: flat slate ground `#48586B` (no gradient; the pin hole is the same colour), with the Tally ring `#F4F4F2` and amber pin and arcs `#FFB020`. The ground was near-black `#0E0F11` until 2026-10-23, when App Review rejected it because the watch icon didn't read as a circle on the black watch face; the iPhone and iPad icon moved to the same ground so the two match. See [the icon background doc](../../Dev_Doc/10-23-26_watch-icon-light-background-01.md).
 
 | Path | Use |
 |---|---|
