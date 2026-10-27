@@ -2,6 +2,8 @@
 
 xGRC is a native iOS, iPadOS and watchOS app that talks directly to the **built-in Bluetooth Low Energy interface of mirrorless and compact cameras**. No dongle, no Wi-Fi, no maker app.
 
+**App Store Link https://apps.apple.com/us/app/xgrc-camera-remote-gps-tag/id6825577706**
+
 It does two things:
 
 1. **Remote shutter.** Focus, shoot, timed bulb, release delay and intervalometer, from the phone, the iPad or the wrist.
