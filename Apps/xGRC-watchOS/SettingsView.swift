@@ -313,10 +313,11 @@ struct ConnectionSettings: View {
     }
 }
 
-/// Version and the app's links. A link opens in the watch's web view.
+/// Version, the app's links and the license. A link opens in the watch's
+/// web view.
 struct AboutSection: View {
     var body: some View {
-        Section("About") {
+        Section {
             VStack(alignment: .leading, spacing: 2) {
                 Text("Version")
                 Text(verbatim: AboutInfo.version)
@@ -329,6 +330,24 @@ struct AboutSection: View {
                     Label(link.title, systemImage: "arrow.up.right")
                 }
             }
+            NavigationLink {
+                LicenseView()
+            } label: {
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("License")
+                    Text(verbatim: AboutInfo.licenseName)
+                        .tallyText(.footnote)
+                        .foregroundStyle(Tally.Palette.textSecondary)
+                }
+                .accessibilityElement(children: .combine)
+            }
+            Link(destination: AboutInfo.sourceLink.url) {
+                Label(AboutInfo.sourceLink.title, systemImage: "arrow.up.right")
+            }
+        } header: {
+            Text("About")
+        } footer: {
+            Text(AboutInfo.openSourceNote)
         }
     }
 }
