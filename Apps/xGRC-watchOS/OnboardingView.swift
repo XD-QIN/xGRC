@@ -6,9 +6,18 @@ import SwiftUI
 /// alive (product spec § Apple Watch › Runtime). Shown again from Settings.
 struct OnboardingView: View {
     @Environment(AppModel.self) private var model
+    @Environment(\.dismiss) private var dismiss
     @State private var page = 0
 
     var body: some View {
+        // The stack only hosts the close button's toolbar.
+        NavigationStack {
+            tips
+                .sheetCloseButton { dismiss() }
+        }
+    }
+
+    private var tips: some View {
         TabView(selection: $page) {
             ModeChoice { page = 1 }
                 .tag(0)
