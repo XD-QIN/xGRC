@@ -43,6 +43,7 @@ struct IntervalometerSheet: View {
                 .disabled(!model.isReady)
             }
             .navigationTitle("Timelapse")
+            .sheetCloseButton { dismiss() }
         }
         .onAppear {
             guard !loaded else { return }

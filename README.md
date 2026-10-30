@@ -106,6 +106,7 @@ Everything beyond this overview lives in [`Dev_Doc/`](Dev_Doc):
 | [Open-source release](Dev_Doc/10-21-26_open-source-gplv3-04.md) | The move to GPLv3, the fresh public history and what was kept out of it |
 | [App icon background](Dev_Doc/10-23-26_watch-icon-light-background-01.md) | Why the watch and iPhone icons moved to a lighter slate ground, the options considered and the App Store checks |
 | [In-app license](Dev_Doc/10-28-26_in-app-license-01.md) | The License screen and the commercial-use note in Settings › About, on the phone and the watch |
+| [Watch sheet close button](Dev_Doc/10-29-26_watch-sheet-close-button-01.md) | Why the watch sheets' close button was white on white, and the replacement |
 
 Code comments cite these as *product spec §*, *architecture doc §* and *protocol reference §* followed by the section name. The design-system boards are indexed in [`Design/README.md`](Design/README.md).
 
