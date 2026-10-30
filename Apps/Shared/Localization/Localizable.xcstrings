@@ -11615,6 +11615,82 @@
         }
       }
     },
+    "License": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lizenz"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licencia"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licencia"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licence"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लाइसेंस"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lisensi"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licenza"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ライセンス"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "라이선스"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Licença"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "许可证"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "授權條款"
+          }
+        }
+      }
+    },
     "Light": {
       "localizations": {
         "de": {
@@ -25465,6 +25541,82 @@
           "stringUnit": {
             "state": "translated",
             "value": "xGRC"
+          }
+        }
+      }
+    },
+    "xGRC is open source under the GNU GPL v3. You may use it commercially, but if you distribute xGRC or a work based on it, you must license it under GPLv3 and make its complete source code available. xGRC comes with no warranty.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC ist Open Source unter der GNU GPL v3. Du darfst xGRC kommerziell nutzen, doch wenn du xGRC oder ein darauf basierendes Werk weitergibst, musst du es unter der GPLv3 lizenzieren und den vollständigen Quellcode bereitstellen. xGRC wird ohne jede Gewährleistung bereitgestellt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC es de código abierto bajo la GNU GPL v3. Puedes usarlo con fines comerciales, pero si distribuyes xGRC o una obra basada en él, debes licenciarla bajo la GPLv3 y poner a disposición su código fuente completo. xGRC no ofrece ninguna garantía."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC es de código abierto bajo la GNU GPL v3. Puedes usarlo con fines comerciales, pero si distribuyes xGRC o una obra basada en él, debes licenciarla bajo la GPLv3 y poner a disposición su código fuente completo. xGRC no ofrece ninguna garantía."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC est un logiciel open source sous licence GNU GPL v3. Vous pouvez l’utiliser à des fins commerciales, mais si vous distribuez xGRC ou une œuvre qui en dérive, vous devez la placer sous GPLv3 et en fournir le code source complet. xGRC est fourni sans aucune garantie."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC, GNU GPL v3 के तहत ओपन सोर्स है। आप इसका व्यावसायिक उपयोग कर सकते हैं, लेकिन यदि आप xGRC या उस पर आधारित कोई कृति वितरित करते हैं, तो आपको उसे GPLv3 के तहत लाइसेंस करना होगा और उसका पूरा सोर्स कोड उपलब्ध कराना होगा। xGRC बिना किसी वारंटी के आता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC adalah perangkat lunak sumber terbuka di bawah GNU GPL v3. Anda boleh menggunakannya secara komersial, tetapi jika Anda mendistribusikan xGRC atau karya yang berbasis padanya, Anda harus melisensikannya di bawah GPLv3 dan menyediakan kode sumber lengkapnya. xGRC tidak disertai jaminan apa pun."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC è open source con licenza GNU GPL v3. Puoi usarlo a fini commerciali, ma se distribuisci xGRC o un'opera basata su di esso devi rilasciarla con licenza GPLv3 e renderne disponibile il codice sorgente completo. xGRC è fornito senza alcuna garanzia."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRCはGNU GPL v3のもとで公開されているオープンソースソフトウェアです。商用利用も可能ですが、xGRCまたはそれをもとにした著作物を配布する場合は、GPLv3でライセンスし、完全なソースコードを公開する必要があります。xGRCは無保証で提供されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC는 GNU GPL v3 라이선스의 오픈 소스입니다. 상업적으로 사용할 수 있지만, xGRC나 이를 기반으로 한 저작물을 배포하는 경우 GPLv3로 라이선스하고 전체 소스 코드를 공개해야 합니다. xGRC는 어떠한 보증도 제공하지 않습니다."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O xGRC é de código aberto sob a GNU GPL v3. Você pode usá-lo comercialmente, mas, se distribuir o xGRC ou uma obra baseada nele, deve licenciá-la sob a GPLv3 e disponibilizar o código-fonte completo. O xGRC não oferece nenhuma garantia."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC 依据 GNU GPL v3 开源。允许商业使用，但如分发 xGRC 或基于它的作品，须以 GPLv3 授权并公开完整源代码。xGRC 不提供任何担保。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "xGRC 依據 GNU GPL v3 開放原始碼。允許商業使用，但如散布 xGRC 或以其為基礎的作品，須以 GPLv3 授權並公開完整原始碼。xGRC 不提供任何擔保。"
           }
         }
       }

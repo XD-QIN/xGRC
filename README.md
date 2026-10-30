@@ -105,6 +105,7 @@ Everything beyond this overview lives in [`Dev_Doc/`](Dev_Doc):
 | [Full review fixes](Dev_Doc/10-19-26_full-project-review-fixes-01.md) | Every finding of the 2026-10-19 code review, its outcome, and the device test checklist |
 | [Open-source release](Dev_Doc/10-21-26_open-source-gplv3-04.md) | The move to GPLv3, the fresh public history and what was kept out of it |
 | [App icon background](Dev_Doc/10-23-26_watch-icon-light-background-01.md) | Why the watch and iPhone icons moved to a lighter slate ground, the options considered and the App Store checks |
+| [In-app license](Dev_Doc/10-28-26_in-app-license-01.md) | The License screen and the commercial-use note in Settings › About, on the phone and the watch |
 | [Watch sheet close button](Dev_Doc/10-29-26_watch-sheet-close-button-01.md) | Why the watch sheets' close button was white on white, and the replacement |
 
 Code comments cite these as *product spec §*, *architecture doc §* and *protocol reference §* followed by the section name. The design-system boards are indexed in [`Design/README.md`](Design/README.md).
@@ -124,4 +125,4 @@ xGRC is not affiliated with, endorsed by, or supported by Sony, Fujifilm, Canon,
 
 ## License
 
-xGRC is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](LICENSE) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [LICENSE](LICENSE) file for details.
+xGRC is free software: you can redistribute it and/or modify it under the terms of the [GNU General Public License](LICENSE) as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. It is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the [LICENSE](LICENSE) file for details. Commercial use is allowed, but anyone who distributes xGRC or a work based on it must license it under GPLv3 and make its complete source code available.
