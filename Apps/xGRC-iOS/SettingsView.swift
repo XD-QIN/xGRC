@@ -115,23 +115,19 @@ struct SettingsView: View {
                 }
             }
 
-            Section("About") {
+            Section {
                 LabeledContent("Version", value: AboutInfo.version)
-                ForEach(AboutInfo.links) { link in
-                    Link(destination: link.url) {
-                        HStack {
-                            Text(link.title).foregroundStyle(Tally.Palette.textPrimary)
-                            Spacer()
-                            if link.showsHost {
-                                Text(verbatim: link.url.host() ?? "")
-                                    .foregroundStyle(Tally.Palette.textTertiary)
-                            }
-                            Image(systemName: "arrow.up.right")
-                                .foregroundStyle(Tally.Palette.textTertiary)
-                                .accessibilityHidden(true)
-                        }
-                    }
+                ForEach(AboutInfo.links) { AboutLinkRow(link: $0) }
+                NavigationLink {
+                    LicenseView()
+                } label: {
+                    LabeledContent("License") { Text(verbatim: AboutInfo.licenseName) }
                 }
+                AboutLinkRow(link: AboutInfo.sourceLink)
+            } header: {
+                Text("About")
+            } footer: {
+                Text(AboutInfo.openSourceNote)
             }
         }
         .scrollContentBackground(.hidden)
@@ -148,6 +144,28 @@ struct SettingsView: View {
             }
         } message: {
             Text("Also remove xGRC on the camera, and remove the camera in Settings › Bluetooth, which also unpairs the maker's app.")
+        }
+    }
+}
+
+/// An About link: opens in the browser, with the site's name unless it is a
+/// legal page.
+private struct AboutLinkRow: View {
+    let link: AboutInfo.Link
+
+    var body: some View {
+        Link(destination: link.url) {
+            HStack {
+                Text(link.title).foregroundStyle(Tally.Palette.textPrimary)
+                Spacer()
+                if link.showsHost {
+                    Text(verbatim: link.url.host() ?? "")
+                        .foregroundStyle(Tally.Palette.textTertiary)
+                }
+                Image(systemName: "arrow.up.right")
+                    .foregroundStyle(Tally.Palette.textTertiary)
+                    .accessibilityHidden(true)
+            }
         }
     }
 }

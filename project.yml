@@ -43,6 +43,9 @@ targets:
       - path: Apps/Shared/Intents
       - path: Apps/Shared/Localization
       - path: Apps/Shared/LiveActivity
+      # Settings › About › License shows it.
+      - path: LICENSE
+        buildPhase: resources
     dependencies:
       - package: xGRCCore
         product: DesignKit
@@ -146,6 +149,8 @@ targets:
       - path: Apps/Shared/App
       - path: Apps/Shared/Intents
       - path: Apps/Shared/Localization
+      - path: LICENSE
+        buildPhase: resources
     dependencies:
       - package: xGRCCore
         product: DesignKit
