@@ -163,3 +163,35 @@ extension SimulatedPeripheral {
         })
     }
 }
+
+extension SimulatedPeripheral {
+    // MARK: GoPro
+
+    /// A HERO body. It answers Set Shutter with `02 01 <status>` (general
+    /// header, command 01) and every other command with success.
+    public static func gopro(shutterStatus: UInt8 = GoPro.statusSuccess) -> SimulatedPeripheral {
+        SimulatedPeripheral(services: [
+            .simulated(GoPro.controlService, [
+                GoPro.command: [.write], GoPro.commandResponse: [.notify],
+                GoPro.settings: [.write], GoPro.settingsResponse: [.notify],
+            ]),
+        ], responder: { write, camera in
+            guard write.characteristic == GoPro.command, write.data.count >= 2 else { return }
+            let id = write.data[write.data.startIndex + 1]
+            let status = id == GoPro.CommandID.setShutter ? shutterStatus : GoPro.statusSuccess
+            await camera.notify(Data([0x02, id, status]), on: GoPro.commandResponse)
+        })
+    }
+
+    // MARK: Ricoh THETA
+
+    /// A THETA X, or another model by its model string.
+    public static func theta(model: String = "RICOH THETA X") -> SimulatedPeripheral {
+        SimulatedPeripheral(services: [
+            .simulated(Theta.infoService, [Theta.modelNumber: [.read]]),
+            .simulated(Theta.controlService, [
+                Theta.notifyState: [.notify], Theta.setOptions: [.write], Theta.requestShutter: [.write],
+            ]),
+        ], values: [Theta.modelNumber: Data(model.utf8)])
+    }
+}

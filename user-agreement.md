@@ -18,9 +18,9 @@ The app's source code is published under the [GNU General Public License, versio
 
 ## 3. Cameras and compatibility
 
-- The camera protocols the app uses were worked out by the open-source community from public Bluetooth traffic. They are not published or supported by the camera makers, and a firmware update can change or break them at any time.
+- Most camera protocols the app uses were worked out by the open-source community from public Bluetooth traffic and are not published or supported by the camera makers. GoPro and Ricoh publish the GoPro and THETA protocols, but they don't support or endorse this app either. A firmware update can change or break any of them at any time.
 - We do not promise that the app works with any particular camera, firmware, device or operating-system version, or that any feature is available on your camera.
-- xGRC is not affiliated with, endorsed by, or supported by Sony, Fujifilm, Canon, Nikon, Ricoh, Panasonic or Apple. Brand and product names are trademarks of their owners.
+- xGRC is not affiliated with, endorsed by, or supported by Sony, Fujifilm, Canon, Nikon, Ricoh, Panasonic, GoPro or Apple. Brand and product names are trademarks of their owners.
 
 ## 4. Your responsibilities
 

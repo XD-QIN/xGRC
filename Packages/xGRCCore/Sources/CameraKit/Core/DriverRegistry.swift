@@ -11,11 +11,13 @@ public struct DriverRegistry: Sendable {
     }
 
     /// Every brand. Order matters only where two could match one
-    /// advertisement, and none do: Sony and Fujifilm match by company ID,
-    /// Canon, Nikon and Panasonic LUMIX by service, Ricoh by service or name.
+    /// advertisement: Sony and Fujifilm match by company ID; Canon, Nikon,
+    /// Panasonic LUMIX and GoPro by service; Ricoh GR by service or name;
+    /// RICOH THETA by name. THETA comes before the GR because the two share
+    /// the Camera Information service UUID.
     public static let standard = DriverRegistry(drivers: [
         SonyDriver.self, FujifilmDriver.self, CanonRemoteDriver.self, CanonSmartDriver.self,
-        NikonRemoteDriver.self, RicohDriver.self, LumixDriver.self,
+        NikonRemoteDriver.self, ThetaDriver.self, RicohDriver.self, LumixDriver.self, GoProDriver.self,
     ])
 
     public func match(_ advertisement: Advertisement) -> CameraMatch? {

@@ -103,7 +103,7 @@ public struct DriverDescriptor: Hashable, Sendable {
 }
 
 public enum CameraBrand: String, Hashable, Sendable, Codable, CaseIterable {
-    case sony, fujifilm, canon, nikon, ricoh, panasonic, demo
+    case sony, fujifilm, canon, nikon, ricoh, panasonic, gopro, demo
 }
 
 public struct DriverCapabilities: OptionSet, Hashable, Sendable {

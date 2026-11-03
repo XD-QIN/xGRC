@@ -42,8 +42,10 @@ The full feature and UI definition is in the [product spec](Dev_Doc/10-14-26_pro
 | Nikon, ML-L7 remote mode | ✅ | ✖ | Time semantics | ✖ | Single source |
 | Ricoh GR III / IIIx / IV | ✅ | ✖ | ✖ | ✅ (GR III/IIIx) | Spec + one implementation |
 | Panasonic LUMIX (from S5, S5II, BGH1 and G9II traces) | ✅ | ✅ | ✅ | ✅ | Untested port of furble's driver |
+| GoPro HERO9 and later | ✅ | ✖ | ✖ | ✖ | Maker's published spec (Open GoPro) |
+| Ricoh THETA X / A1 (360°) | ✅ | ✖ | ✖ | ✖ | Maker's published spec (THETA Bluetooth API) |
 
-Nothing has been tested on a real body by xGRC yet. Sony bodies older than the α7 IV can use the remote or geotagging per session, not both. Nikon SnapBridge mode needs Bluetooth Classic and is likely out of scope. The full matrix, with sources and community-confirmed bodies, is in the [product spec](Dev_Doc/10-14-26_product-spec-01.md#camera-support-matrix).
+Only Sony has been tried on a real body so far; every other brand is built from the sources listed and waits for a device test. Sony bodies older than the α7 IV can use the remote or geotagging per session, not both. Nikon SnapBridge mode needs Bluetooth Classic and is likely out of scope. The full matrix, with sources and community-confirmed bodies, is in the [product spec](Dev_Doc/10-14-26_product-spec-01.md#camera-support-matrix).
 
 ## Requirements
 
@@ -96,7 +98,7 @@ Everything beyond this overview lives in [`Dev_Doc/`](Dev_Doc):
 |---|---|
 | [Product spec](Dev_Doc/10-14-26_product-spec-01.md) | Fixed product decisions, scope, support matrix, features, UI for iPhone, iPad and Apple Watch, states and errors, privacy |
 | [Architecture](Dev_Doc/10-14-26_architecture-02.md) | Modules and key abstractions, gesture timing, intervalometer, reconnect and geotag rules, acknowledgement per brand, Apple platform constraints, budgets, testing, open risks |
-| [BLE protocol reference](Dev_Doc/10-14-26_ble-protocol-reference-03.md) | Per-brand GATT layouts and byte sequences (Sony, Fujifilm, Canon, Nikon, Ricoh, Panasonic LUMIX) and every source used |
+| [BLE protocol reference](Dev_Doc/10-14-26_ble-protocol-reference-03.md) | Per-brand GATT layouts and byte sequences (Sony, Fujifilm, Canon, Nikon, Ricoh GR and THETA, Panasonic LUMIX, GoPro) and every source used |
 | [Phased plan](Dev_Doc/10-14-26_phased-plan-04.md) | Phases 1–7, work items, the Phase 6 device test list and exit criteria |
 | [Phase 1](Dev_Doc/10-15-26_phase-1-watch-remote-01.md) · [2](Dev_Doc/10-15-26_phase-2-watch-geotag-02.md) · [3](Dev_Doc/10-15-26_phase-3-watch-polish-03.md) · [4](Dev_Doc/10-15-26_phase-4-iphone-ipad-app-04.md) · [5](Dev_Doc/10-15-26_phase-5-other-brands-05.md) | What each build phase built, its decisions, known gaps and its device tests |
 | [Sony vs AlphaRemote](Dev_Doc/10-15-26_sony-alpharemote-review-06.md) | The Sony driver compared with AlphaRemote, and the bulb bug it found |
@@ -109,6 +111,7 @@ Everything beyond this overview lives in [`Dev_Doc/`](Dev_Doc):
 | [In-app license](Dev_Doc/10-28-26_in-app-license-01.md) | The License screen and the commercial-use note in Settings › About, on the phone and the watch |
 | [Watch sheet close button](Dev_Doc/10-29-26_watch-sheet-close-button-01.md) | Why the watch sheets' close button was white on white, and the replacement |
 | [Panasonic LUMIX support](Dev_Doc/11-03-26_panasonic-lumix-support-01.md) | The LUMIX driver ported from furble's pull request, where the sources disagree, and what the device test must check |
+| [GoPro and RICOH THETA support](Dev_Doc/11-03-26_gopro-and-theta-support-02.md) | Two remote-only brands built from the makers' own published Bluetooth specs, which bodies are left out and why, and the device test |
 
 Code comments cite these as *product spec §*, *architecture doc §* and *protocol reference §* followed by the section name. The design-system boards are indexed in [`Design/README.md`](Design/README.md).
 
@@ -116,14 +119,14 @@ Code comments cite these as *product spec §*, *architecture doc §* and *protoc
 
 ## Acknowledgements
 
-The camera protocols were reverse-engineered by the open-source community. xGRC builds on [gkoh/furble](https://github.com/gkoh/furble) above all, and on the projects listed in the [protocol reference's References](Dev_Doc/10-14-26_ble-protocol-reference-03.md#references). furble is MIT-licensed and is referenced, not copied; the Panasonic LUMIX driver is a Swift port of the protocol in furble's pull request #282, credited in the code and the docs.
+The camera protocols were reverse-engineered by the open-source community. xGRC builds on [gkoh/furble](https://github.com/gkoh/furble) above all, and on the projects listed in the [protocol reference's References](Dev_Doc/10-14-26_ble-protocol-reference-03.md#references). furble is MIT-licensed and is referenced, not copied; the Panasonic LUMIX driver is a Swift port of the protocol in furble's pull request #282, credited in the code and the docs. The GoPro and RICOH THETA drivers follow the makers' published specifications (Open GoPro; the THETA Bluetooth API) and their MIT-licensed SDKs, written from the documented facts without copying SDK code.
 
 ## Legal
 
 - [Privacy policy](privacy-policy.md), published at <https://xdqin.com/xGRC/privacy-policy>. xGRC collects no data: location goes only to your camera over Bluetooth, and there are no accounts, analytics or servers.
 - [User agreement](user-agreement.md), published at <https://xdqin.com/xGRC/user-agreement>.
 
-xGRC is not affiliated with, endorsed by, or supported by Sony, Fujifilm, Canon, Nikon, Ricoh, Panasonic or Apple. Brand and product names are trademarks of their owners. Use at your own risk; a broken pairing can usually be fixed by deleting the device on the camera and in Settings → Bluetooth.
+xGRC is not affiliated with, endorsed by, or supported by Sony, Fujifilm, Canon, Nikon, Ricoh, Panasonic, GoPro or Apple. Brand and product names are trademarks of their owners. Use at your own risk; a broken pairing can usually be fixed by deleting the device on the camera and in Settings → Bluetooth.
 
 ## License
 
