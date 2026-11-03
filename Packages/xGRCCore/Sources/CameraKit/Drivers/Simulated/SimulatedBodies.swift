@@ -145,4 +145,21 @@ extension SimulatedPeripheral {
             Ricoh.geoTag: Data([storeLocation ? 0x01 : 0x00]),
         ])
     }
+
+    // MARK: Panasonic LUMIX
+
+    /// An S5-style body. After our name it notifies `01` on both ready
+    /// characteristics, as lux-lat-long-log saw, unless `sendsReady` is off.
+    public static func lumix(sendsReady: Bool = true) -> SimulatedPeripheral {
+        SimulatedPeripheral(services: [
+            .simulated(Lumix.sessionService, [Lumix.sessionInit: [.write], Lumix.deviceName: [.write]]),
+            .simulated(Lumix.controlService, [Lumix.control: [.write]]),
+            .simulated(Lumix.locationService, [Lumix.location: [.write], Lumix.locationReady: [.notify]]),
+            .simulated(Lumix.clockService, [Lumix.clock: [.write], Lumix.clockReady: [.notify]]),
+        ], responder: { write, camera in
+            guard sendsReady, write.characteristic == Lumix.deviceName else { return }
+            await camera.notify(Data([0x01]), on: Lumix.locationReady)
+            await camera.notify(Data([0x01]), on: Lumix.clockReady)
+        })
+    }
 }

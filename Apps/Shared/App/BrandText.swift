@@ -34,6 +34,10 @@ enum BrandText {
             Set Bluetooth to On in the camera's communication settings, then confirm the passkey shown on the camera. \
             For geotags, turn on Store Location Info.
             """)),
+        PairingSteps(brand: "Panasonic LUMIX", steps: String(localized: """
+            Setup › Bluetooth: set Bluetooth to On and choose Pairing, then pick the camera here. For geotags, turn \
+            on Location Logging in the same menu.
+            """)),
     ] }
 
     /// The brand shown as a badge under the camera's name, e.g. "Sony".
@@ -66,6 +70,8 @@ enum BrandText {
             return String(localized: "Confirm on \(device), then choose OK on the camera")
         case RicohDriver.descriptor.id:
             return String(localized: "Confirm the passkey shown on the camera")
+        case LumixDriver.descriptor.id:
+            return String(localized: "Keep the camera on its pairing screen and confirm there if it asks")
         default:
             return String(localized: "Confirm on \(device), then on the camera")
         }

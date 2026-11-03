@@ -11235,6 +11235,82 @@
         }
       }
     },
+    "Keep the camera on its pairing screen and confirm there if it asks": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lass die Kamera auf ihrem Pairing-Bildschirm und bestätige dort, falls sie fragt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deja la cámara en su pantalla de emparejamiento y confirma allí si lo pide"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deja la cámara en su pantalla de vinculación y confirma ahí si lo pide"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laissez l’appareil sur son écran d’appairage et confirmez-y s’il le demande"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैमरे को उसकी पेयरिंग स्क्रीन पर रखें और पूछे जाने पर वहीं पुष्टि करें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biarkan kamera di layar pemasangannya dan konfirmasi di sana jika diminta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lascia la fotocamera sulla schermata di abbinamento e conferma lì se lo chiede"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カメラをペアリング画面のままにし、確認を求められたらカメラで確定してください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "카메라를 페어링 화면에 둔 채, 확인을 요청하면 카메라에서 확인하세요"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deixe a câmera na tela de pareamento e confirme nela se ela pedir"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让相机停留在配对界面，如有提示请在相机上确认"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "讓相機停留在配對畫面，如有提示請在相機上確認"
+          }
+        }
+      }
+    },
     "Keeps the camera's screen on so the first shots after it wakes are tagged.": {
       "localizations": {
         "de": {
@@ -18087,6 +18163,82 @@
           "stringUnit": {
             "state": "translated",
             "value": "設定"
+          }
+        }
+      }
+    },
+    "Setup › Bluetooth: set Bluetooth to On and choose Pairing, then pick the camera here. For geotags, turn on Location Logging in the same menu.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: Stelle Bluetooth auf On, wähle Pairing und wähle dann hier die Kamera aus. Für Geotags schalte im selben Menü Location Logging ein."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: activa Bluetooth (On), elige Pairing y luego selecciona aquí la cámara. Para las geoetiquetas, activa Location Logging en el mismo menú."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: activa Bluetooth (On), elige Pairing y luego selecciona aquí la cámara. Para las geoetiquetas, activa Location Logging en el mismo menú."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth : réglez Bluetooth sur On et choisissez Pairing, puis sélectionnez l’appareil ici. Pour le géomarquage, activez Location Logging dans le même menu."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: Bluetooth को On करें और Pairing चुनें, फिर यहाँ कैमरा चुनें। जियोटैग के लिए उसी मेनू में Location Logging चालू करें।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: setel Bluetooth ke On dan pilih Pairing, lalu pilih kamera di sini. Untuk geotag, nyalakan Location Logging di menu yang sama."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: imposta Bluetooth su On e scegli Pairing, poi seleziona qui la fotocamera. Per il geotag, attiva Location Logging nello stesso menu."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth で Bluetooth を On にして Pairing を選び、ここでカメラを選んでください。ジオタグを使うには、同じメニューで「Location Logging」をオンにしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth에서 Bluetooth를 On으로 설정하고 Pairing을 선택한 다음, 여기에서 카메라를 고르세요. 지오태그를 쓰려면 같은 메뉴에서 Location Logging을 켜세요."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: ajuste Bluetooth para On e escolha Pairing, depois selecione a câmera aqui. Para geomarcação, ative Location Logging no mesmo menu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 Setup › Bluetooth 中将 Bluetooth 设为 On 并选择 Pairing，然后在此处选择相机。如需地理标记，请在同一菜单中开启 Location Logging。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 Setup › Bluetooth 中將 Bluetooth 設為 On 並選擇 Pairing，然後在此處選擇相機。如需地理標記，請在同一選單中開啟 Location Logging。"
           }
         }
       }
