@@ -34,6 +34,18 @@ enum BrandText {
             Set Bluetooth to On in the camera's communication settings, then confirm the passkey shown on the camera. \
             For geotags, turn on Store Location Info.
             """)),
+        PairingSteps(brand: "Panasonic LUMIX", steps: String(localized: """
+            Setup › Bluetooth: set Bluetooth to On and choose Pairing, then pick the camera here. For geotags, turn \
+            on Location Logging in the same menu.
+            """)),
+        PairingSteps(brand: "GoPro", steps: String(localized: """
+            Swipe down, then Preferences › Wireless Connections › Connect Device › GoPro Quik App, and pick the \
+            camera here. HERO9 or later.
+            """)),
+        PairingSteps(brand: "RICOH THETA", steps: String(localized: """
+            THETA X or A1: turn Bluetooth on in the camera's settings, then pick the camera here. Its name is the \
+            number part of its serial. THETA V and Z1 are not supported.
+            """)),
     ] }
 
     /// The brand shown as a badge under the camera's name, e.g. "Sony".
@@ -66,6 +78,8 @@ enum BrandText {
             return String(localized: "Confirm on \(device), then choose OK on the camera")
         case RicohDriver.descriptor.id:
             return String(localized: "Confirm the passkey shown on the camera")
+        case LumixDriver.descriptor.id:
+            return String(localized: "Keep the camera on its pairing screen and confirm there if it asks")
         default:
             return String(localized: "Confirm on \(device), then on the camera")
         }
@@ -97,6 +111,10 @@ enum BrandText {
             String(localized: "The camera reacts only in Self-timer: 10 s/remote or 2 s/remote drive mode.")
         case NikonRemoteDriver.descriptor.id?:
             String(localized: "Bulb runs as Time: set the camera's shutter speed to Time.")
+        case GoProDriver.descriptor.id?:
+            String(localized: "Each press takes a photo. xGRC switches the camera to Photo mode when it connects.")
+        case ThetaDriver.descriptor.id?:
+            String(localized: "Each press takes a 360° photo. xGRC switches the THETA to still mode when it connects.")
         default:
             nil
         }

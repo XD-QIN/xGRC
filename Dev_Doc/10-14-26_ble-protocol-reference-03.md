@@ -204,12 +204,70 @@ Sources: furble (GR IV only; its Ricoh GPS path is a logging stub), the communit
 - Geotag enable: read GEO Tag; if `0`, show "Turn on Store Location Info. on the camera" and write `1` only after the user confirms; subscribe for changes.
 - GPS packet, big-endian except year: latitude, longitude, altitude as Float64; year Int16 **little-endian**; month, day, hour, minute, second; last byte datum `0` = WGS-84 (furble puts centiseconds in that slot; the API doc says datum; CameraSync sends the documented form; xGRC sends `0`). Timestamp is the time of the fix, UTC. furble rate-limits to one write per 10 s or on movement ≥ 0.00001° / 1 m.
 
+### Panasonic LUMIX
+
+Sources: furble PR #282, branch `feature/support-panasonic-lumix` (`Lumix.cpp`, from S5II and BGH1 HCI traces; its author says it is wholly untested), tobiasbrummer/lux-lat-long-log (`PROTOCOL.md` and an ESP32 build; S5, MIT; handshake, clock and GPS confirmed on the camera, location seen in EXIF), and Aikhjarto/LUMIX-G9II-Remote-Control (G9II, by handle, with LUMIX Sync and LUMIX Lab traces). All Panasonic UUIDs end in `-0002A5D5C51B` except the remote control service.
+
+| Service | Characteristic | Use |
+|---|---|---|
+| Session `054AC620-3214-11E6-AC0D-0002A5D5C51B` (advertised) | `8D08A420-3213-11E6-8ACA-0002A5D5C51B` session init (write); `CD7A71A0-3213-11E6-8F56-0002A5D5C51B` device name (write, ASCII) | Handshake |
+| Remote control `7BE5FAAE-475B-11E7-A919-92EBCB67FE33` | `7BE5FD56-475B-11E7-A919-92EBCB67FE33` one command byte | Focus `01` press / `02` release, shutter `04` press / `05` release; the G9II trace adds `06`/`07` (record toggle) |
+| Location `1D74AFE0-3214-11E6-8AB4-0002A5D5C51B` | `DAFF1BC0-3216-11E6-91C8-0002A5D5C51B` GPS (write 16 bytes); `37701B80-32A7-11E6-BB83-0002A5D5C51B` ready (notify `01`) | Geotag |
+| Clock `34738720-3214-11E6-B66B-0002A5D5C51B` | `EAD55E60-3216-11E6-A42E-0002A5D5C51B` clock (write 10 bytes); `4CF487C0-32A7-11E6-A50D-0002A5D5C51B` ready (notify `01`) | Clock |
+
+- Advertising: Panasonic company ID `0x003A` in the manufacturer data (then a flags byte and five address bytes, per furble) and the session service. xGRC matches the session or the location service. The S5 uses a resolvable private address that rotates about every 15 minutes; its name (`S5-XXXXXX`) is stable.
+- Security: no SMP, no encryption and no bond in any S5 capture. The pairing is the application-level handshake. Without a bond iOS cannot resolve the camera's private address, so whether a saved camera reconnects after its address rotates is a device-test item.
+- Handshake on every connect: subscribe to both ready characteristics, write `MEI0` (`4D 45 49 30 01 00 10 00 80 01 02 00` + a session counter and a check value, not verified by the camera; furble sends `00 01 00 00`, lux replays `00 03 0B 54`), write our name, wait for `01` on both ready characteristics, write the clock, then GPS. lux found that going straight from `MEI0` to GPS makes the camera drop the link; furble writes no clock in the handshake and does not wait.
+- The G9II with LUMIX Sync uses a challenge instead: read a 4-byte value and write two 20-byte values derived from it with XOR constants that look like a scrambled `MEI0`. Which bodies need that is unknown; xGRC sends the static `MEI0`.
+- GPS packet, little-endian: UInt32 seconds since the GPS epoch 1980-01-06 (Unix − 315 964 800, UTC, no leap seconds), Int32 latitude × 10⁷, Int32 longitude × 10⁷, UInt16 altitude in metres (sign unknown; xGRC sends 0 below sea level), `0x41` (`'A'`, valid fix), `0x00`. Matches LUMIX Sync's own writes in the G9II trace byte for byte. The camera keeps the last position until a shot. The LUMIX app writes about once a second (LUMIX Lab every 4 s).
+- Clock packet, 10 bytes: year UInt16 LE, month, day, hour, minute, second. The tail differs between sources: S5 (lux, accepted, camera clock right in Central Europe in June) `3C 00 01`, read as standard offset +60 min and DST on, with the time in UTC; G9II (LUMIX Sync, December) `00 3C 00` after a local-time second; furble sends UTC with `00 00 00`. xGRC sends UTC + standard offset (Int16 LE minutes) + DST flag, and only in geotag sessions.
+- LUMIX Sync writes `01` to the control characteristic every 3–4 s while geotagging (lux trace); purpose unknown, xGRC does not.
+- No focus or shutter acknowledgement is decoded (the G9II trace shows a notification after each focus write), so shots are timed presses.
+
+### GoPro (HERO9 and later)
+
+Sources: GoPro's published Open GoPro BLE specification (gopro.github.io/OpenGoPro/ble) and its MIT-licensed Python SDK, `open_gopro` 0.22.0 from PyPI (`models/constants/uuids.py`, `models/constants/constants.py`, `api/builders.py`, `api/ble_commands.py`, `parsers/response.py`, `domain/communicator_interface.py`, `gopro_wireless.py`). kmatzen/facett (MIT, SwiftUI iOS, HERO10) shows an iPhone driving these cameras over BLE. The maker publishes the protocol, so this is the best-documented brand xGRC supports, but xGRC hasn't tested it on a camera.
+
+| Service | Characteristic | Use |
+|---|---|---|
+| Control and Query `FEA6` (16-bit, advertised) | `B5F90072-AA8D-11E3-9046-0002A5D5C51B` command (write); `B5F90073-…` command response (notify) | Shutter, presets, client info |
+| | `B5F90074-…` settings (write); `B5F90075-…` settings response (notify) | Keep-alive |
+| | `B5F90076-…` / `B5F90077-…` query and response | Not used |
+
+All GoPro 128-bit UUIDs are `B5F9xxxx-AA8D-11E3-9046-0002A5D5C51B`.
+
+- **Advertising:** the `FEA6` service and a `GoPro XXXX` name. xGRC matches on the service only.
+- **Security:** the characteristics need an encrypted link. The first time, the camera must be on its pairing screen (Preferences › Wireless Connections › Connect Device › GoPro Quik App). Subscribing to the command response raises the system pairing dialog, and later connects reuse the bond.
+- **Framing:** every message is split into 20-byte packets. The first packet's header is either *general*, one byte with bits 6–5 `00` and a 5-bit length, or *extended 13-bit* (`01` + 13 bits), or *extended 16-bit* (`10`, then a 16-bit length in the next two bytes). Each continuation packet starts with a byte that has bit 7 set. The SDK sends with the 13-bit header. The spec's examples (and xGRC) use the general header for short messages. xGRC parses all three on receive.
+- **Commands** are `[id, parameter length, parameter…]` behind the header. If there's no parameter, the message is just the ID. Set Shutter is `01`: on `03 01 01 01`, off `03 01 01 00`. Load Preset Group is `3E` with a big-endian UInt16 group (Video 1000, Photo 1001, Time Lapse 1002): Photo is `04 3E 02 03 E9`. Set Third Party Client Info is `50`: `01 50`, the SDK's first command after connecting.
+- **Responses** come on `0073` as `[id, status, …]`. Status 0 is success, 1 is error, 2 is invalid parameter. Set Shutter answers `02 01 00` on success. xGRC treats that as the shot confirmation (`.shutterActive`). Any other response is logged.
+- **Keep-alive:** set setting 91 (LED) to 66, `03 5B 01 42` on `0074`. The SDK sends it every 3 s, and xGRC does the same while connected.
+- **Shutter on** takes a photo in a photo preset and starts recording in a video preset, which then needs shutter off. xGRC loads the Photo preset group on every remote connect so a press is always one photo, and `releaseAll` is empty so a disconnect never stops a recording the user started on the camera.
+- **No location:** the spec has date/time commands (`0D`, `0F` with zone and DST) but no command that takes the phone's position, so GoPro is remote-only.
+
+### Ricoh THETA X / A1 (360°)
+
+Sources: Ricoh's published THETA Bluetooth API (ricohapi/theta-api-specs, `theta-bluetooth-api/`) and its MIT client ricohapi/theta-ble-client (`BleService.kt`, `BleCharacteristic.kt`, `service/CameraControlCommandV2.kt`, `ble/BleScanner.kt`, tutorial for iOS). The maker publishes the protocol, but xGRC hasn't tested it on a camera.
+
+| Service | Characteristic | Use |
+|---|---|---|
+| Camera Information `9A5ED1C5-74CC-4C50-B5B6-66A48E7CCFF1` (same as the GR) | `35FE6272-6AA5-44D9-88E1-F09427F51A71` model number (read) | Refuses V/Z1 |
+| Camera Control Command v2 `B6AC7A7E-8C01-4A52-B188-68D53DF53EA2` | `6E2DEEBE-88B0-42A5-829D-1B2C6ABCE750` request shutter command (write, JSON) | Shot |
+| | `F0BCD2F9-5862-4653-B50D-80DC51E8CB82` set options (write, JSON) | Still mode |
+| | `D32CE140-B0C2-4C07-AF15-2301B5057B8C` state (notify, JSON) | Logged |
+
+- **Advertising:** THETA advertises no public service. The client finds it by name: eight digits (X, Z1; the numeric part of the serial) or two letters and eight digits (A1). xGRC matches that name, or the control service if it ever appears. THETA comes before the GR in the registry because the two share the Camera Information service UUID.
+- **Security:** none. The camera doesn't pair over BLE, and X and A1 need no authentication for Camera Control Command v2.
+- **Shot:** write `{"name":"camera.takePicture"}` to the request-shutter characteristic. The client sends `camera.startCapture` / `camera.stopCapture` instead in video mode, so a remote session first writes `{"captureMode":"image"}` to set options. The state notification (`_captureStatus`, `_capturedPictures`, …) is logged but not decoded, so shots count as *assumed*.
+- **THETA V and Z1:** their full Bluetooth API (Take Picture `FEC1805C-…`, GPS Information `97B06384-…` in service `84A0DD62-…`) works only after the app registers its UUID with the camera over **Wi-Fi** (`camera._setBluetoothDevice`) and then writes it to Auth Bluetooth Device (`EBAFB2F0-…`). xGRC doesn't do the Wi-Fi step, so it refuses these models by their model string. Ricoh's client also says the v2 shutter command isn't supported on the Z1.
+- **No location:** the client has no Bluetooth GPS write for X or A1 (the X has its own GPS), so THETA is remote-only.
+
 ### Cross-brand behaviours xGRC must implement
 
 | Behaviour | Brands |
 |---|---|
 | Camera pulls location on a timer; we answer | Fujifilm |
-| We push location on a timer / movement | Sony, Canon Smart, Ricoh, Nikon Smart |
+| We push location on a timer / movement | Sony, Canon Smart, Ricoh, Nikon Smart, Panasonic LUMIX |
 | Camera must be *enabled* for location before packets | Sony (`DD30`/`DD31` where present), Canon Smart (`00040002` ← `0x01`), Ricoh (GEO Tag, user-confirmed) |
 | Camera uses a resolvable private address; rely on the resolved identifier, fall back to serial / ID match on a foreground scan | Fujifilm secure, Nikon |
 | App-level identity we must persist | Fujifilm legacy (token), Fujifilm secure (serial), Nikon (device+nonce); Sony and Canon need only the bond; Canon Smart stores *our* UUID+name camera-side |
@@ -242,6 +300,9 @@ Independent verification used in these docs:
 - Fujifilm: sarmadjari/GeoShutter `docs/fujifilm-protocol.md` — https://github.com/sarmadjari/GeoShutter ; tiredboffin/fffw (firmware GATT tables) — https://github.com/tiredboffin/fffw ; furble discussion #99 (shutter-button AF) — https://github.com/gkoh/furble/discussions/99 ; petabyt/fudge — https://github.com/petabyt/fudge ; hkr/fuji-cam-wifi-tool — https://github.com/hkr/fuji-cam-wifi-tool
 - Canon: Ian Douglas Scott — https://iandouglasscott.com/2017/09/04/reverse-engineering-the-canon-t7i-s-bluetooth-work-in-progress/ and https://iandouglasscott.com/2018/07/04/canon-dslr-bluetooth-remote-protocol/ ; pklaus/canoremote — https://github.com/pklaus/canoremote ; RReverser/eos-remote-web — https://github.com/RReverser/eos-remote-web ; robot9706/CanonBLEIntervalometer — https://github.com/robot9706/CanonBLEIntervalometer ; asteppke/ESP32-Canon-BLE-Remote — https://github.com/asteppke/ESP32-Canon-BLE-Remote ; ArthurFDLR/BR-M5 — https://github.com/ArthurFDLR/BR-M5 ; mcfitz2/camera-gps — https://github.com/mcfitz2/camera-gps
 - Ricoh: dm-zharov/ricoh-gr-bluetooth-api — https://github.com/dm-zharov/ricoh-gr-bluetooth-api ; rock3r/CameraSync (above); Ricoh GR WORLD announcement — https://news.ricoh-imaging.co.jp/rim_info2/2025/20250715_041137.html
+- Panasonic LUMIX: gkoh/furble PR #282, branch `feature/support-panasonic-lumix` (MIT; `Lumix.cpp` read at `fdf5809` and ported) — https://github.com/gkoh/furble/pull/282 ; furble issue #247 — https://github.com/gkoh/furble/issues/247 ; tobiasbrummer/lux-lat-long-log (MIT; S5) — https://github.com/tobiasbrummer/lux-lat-long-log ; Aikhjarto/LUMIX-G9II-Remote-Control — https://github.com/Aikhjarto/LUMIX-G9II-Remote-Control
+- GoPro: Open GoPro BLE specification — https://gopro.github.io/OpenGoPro/ble ; gopro/OpenGoPro — https://github.com/gopro/OpenGoPro ; open_gopro 0.22.0 (MIT) — https://pypi.org/project/open_gopro/ ; kmatzen/facett (MIT, iOS) — https://github.com/kmatzen/facett
+- Ricoh THETA: ricohapi/theta-api-specs (THETA Bluetooth API) — https://github.com/ricohapi/theta-api-specs ; ricohapi/theta-ble-client (MIT) — https://github.com/ricohapi/theta-ble-client
 - Nikon: hurui200320/nsg (`doc/nikon-z-gps.md`) — https://github.com/hurui200320/nsg ; Nikon SnapBridge help — https://nikonimglib.com/snbr/onlinehelp/en/bluetooth_pairing_4.html and https://nikonimglib.com/snbr/onlinehelp/en/02_connect_02.html ; Nikon 2016 SnapBridge release — https://www.nikon.com/company/news/2016/0106_snapbridge_04/ ; Z f manual, ML-L7 options — https://onlinemanual.nikonimglib.com/zf/en/nwm_wireless_remote_ml-l7_options_331.html ; Z50 mode dial (Bulb as Time with ML-L7) — https://onlinemanual.nikonimglib.com/z50/en/06_shooting_controls_01.html
 - Sony bulb with the Bluetooth remote (toggle): α7 IV — https://helpguide.sony.net/ilc/2110/v1/en/contents/TP1000640135.html ; α7R IV — https://helpguide.sony.net/ilc/1930/v1/en/contents/TP0002711806.html ; α7CR — https://helpguide.sony.net/ilc/2370/v1/en/contents/0302C_bulb.html ; ZV-1 — https://helpguide.sony.net/dc/1910/v1/en/contents/TP0002869961.html ; RX100 VII — https://helpguide.sony.net/dsc/1920/v1/en/contents/TP0001140416.html ; RMT-P1BT announcement — https://www.sony.com.hk/press/pdf/20190404_2_e.pdf
 - Camera makers' help (user-facing facts): Sony Bluetooth Rmt Ctrl and Location Information Linkage, older generation — https://helpguide.sony.net/ilc/2040/v1/en/contents/TP1000425296.html , https://helpguide.sony.net/ilc/2040/v1/en/contents/TP1000416843.html , https://helpguide.sony.net/ilc/1950/v1/en/contents/TP0002679686.html ; newer generation (power save only) — https://helpguide.sony.net/ilc/2110/v1/en/contents/TP1000656752.html , https://helpguide.sony.net/ilc/2320/v1/en/contents/0706_bluetooth_remote.html , https://helpguide.sony.net/ilc/2310/v1/en/contents/0706_bluetooth_remote.html ; Fujifilm location info (3 h / 2 h rules) — https://app.fujifilm-dsc.com/en/manual/camera_remote/usage/location_info/ ; Fujifilm paired devices (7) — https://app.fujifilm-dsc.com/en/manual/gfx100/connections/wireless/index.html ; Fujifilm X100VI firmware notes (22 July 2025 pairing change) — https://fujifilm-x.com/en-us/support/download/firmware/cameras/x100vi/ ; Canon EOS R8 GPS device settings — https://cam.start.canon/en/C013/manual/html/UG-07_Network_0150.html ; Canon remote control shooting (drive mode) — https://cam.start.canon/en/C010/manual/html/UG-04_AF-Drive_0120.html

@@ -7351,6 +7351,158 @@
         }
       }
     },
+    "Each press takes a 360° photo. xGRC switches the THETA to still mode when it connects.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeder Druck macht ein 360°-Foto. xGRC stellt die THETA beim Verbinden auf Standbild."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada pulsación hace una foto de 360°. xGRC pone la THETA en modo foto al conectarse."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada toque toma una foto de 360°. xGRC pone la THETA en modo foto al conectarse."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chaque appui prend une photo à 360°. xGRC passe la THETA en mode photo à la connexion."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर दबाव पर 360° फ़ोटो ली जाती है। कनेक्ट होने पर xGRC THETA को स्टिल मोड में कर देता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setiap tekanan mengambil foto 360°. xGRC mengalihkan THETA ke mode foto diam saat terhubung."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ogni pressione scatta una foto a 360°. xGRC passa la THETA in modalità foto quando si collega."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "押すたびに 360° 写真を1枚撮影します。接続時に xGRC が THETA を静止画モードに切り替えます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "누를 때마다 360° 사진을 한 장 찍습니다. 연결되면 xGRC가 THETA를 사진 모드로 바꿉니다."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada toque tira uma foto 360°. O xGRC muda a THETA para o modo foto ao se conectar."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每按一次拍一张 360° 照片。xGRC 连接时会把 THETA 切换到静态照片模式。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每按一次拍一張 360° 照片。xGRC 連線時會把 THETA 切換到靜態照片模式。"
+          }
+        }
+      }
+    },
+    "Each press takes a photo. xGRC switches the camera to Photo mode when it connects.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jeder Druck macht ein Foto. xGRC stellt die Kamera beim Verbinden auf den Fotomodus."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada pulsación hace una foto. xGRC pone la cámara en modo Foto al conectarse."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada toque toma una foto. xGRC pone la cámara en modo Foto al conectarse."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chaque appui prend une photo. xGRC passe la caméra en mode Photo à la connexion."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हर दबाव पर एक फ़ोटो ली जाती है। कनेक्ट होने पर xGRC कैमरे को Photo मोड में कर देता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setiap tekanan mengambil satu foto. xGRC mengalihkan kamera ke mode Foto saat terhubung."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ogni pressione scatta una foto. xGRC passa la videocamera in modalità Foto quando si collega."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "押すたびに写真を1枚撮影します。接続時に xGRC がカメラを写真モードに切り替えます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "누를 때마다 사진을 한 장 찍습니다. 연결되면 xGRC가 카메라를 사진 모드로 바꿉니다."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cada toque tira uma foto. O xGRC muda a câmera para o modo Foto ao se conectar."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每按一次拍一张照片。xGRC 连接时会把相机切换到拍照模式。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "每按一次拍一張照片。xGRC 連線時會把相機切換到拍照模式。"
+          }
+        }
+      }
+    },
     "End session": {
       "localizations": {
         "de": {
@@ -11231,6 +11383,82 @@
           "stringUnit": {
             "state": "translated",
             "value": "保持相機喚醒"
+          }
+        }
+      }
+    },
+    "Keep the camera on its pairing screen and confirm there if it asks": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lass die Kamera auf ihrem Pairing-Bildschirm und bestätige dort, falls sie fragt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deja la cámara en su pantalla de emparejamiento y confirma allí si lo pide"
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deja la cámara en su pantalla de vinculación y confirma ahí si lo pide"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laissez l’appareil sur son écran d’appairage et confirmez-y s’il le demande"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैमरे को उसकी पेयरिंग स्क्रीन पर रखें और पूछे जाने पर वहीं पुष्टि करें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biarkan kamera di layar pemasangannya dan konfirmasi di sana jika diminta"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lascia la fotocamera sulla schermata di abbinamento e conferma lì se lo chiede"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "カメラをペアリング画面のままにし、確認を求められたらカメラで確定してください"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "카메라를 페어링 화면에 둔 채, 확인을 요청하면 카메라에서 확인하세요"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deixe a câmera na tela de pareamento e confirme nela se ela pedir"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让相机停留在配对界面，如有提示请在相机上确认"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "讓相機停留在配對畫面，如有提示請在相機上確認"
           }
         }
       }
@@ -18091,6 +18319,82 @@
         }
       }
     },
+    "Setup › Bluetooth: set Bluetooth to On and choose Pairing, then pick the camera here. For geotags, turn on Location Logging in the same menu.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: Stelle Bluetooth auf On, wähle Pairing und wähle dann hier die Kamera aus. Für Geotags schalte im selben Menü Location Logging ein."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: activa Bluetooth (On), elige Pairing y luego selecciona aquí la cámara. Para las geoetiquetas, activa Location Logging en el mismo menú."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: activa Bluetooth (On), elige Pairing y luego selecciona aquí la cámara. Para las geoetiquetas, activa Location Logging en el mismo menú."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth : réglez Bluetooth sur On et choisissez Pairing, puis sélectionnez l’appareil ici. Pour le géomarquage, activez Location Logging dans le même menu."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: Bluetooth को On करें और Pairing चुनें, फिर यहाँ कैमरा चुनें। जियोटैग के लिए उसी मेनू में Location Logging चालू करें।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: setel Bluetooth ke On dan pilih Pairing, lalu pilih kamera di sini. Untuk geotag, nyalakan Location Logging di menu yang sama."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: imposta Bluetooth su On e scegli Pairing, poi seleziona qui la fotocamera. Per il geotag, attiva Location Logging nello stesso menu."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth で Bluetooth を On にして Pairing を選び、ここでカメラを選んでください。ジオタグを使うには、同じメニューで「Location Logging」をオンにしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth에서 Bluetooth를 On으로 설정하고 Pairing을 선택한 다음, 여기에서 카메라를 고르세요. 지오태그를 쓰려면 같은 메뉴에서 Location Logging을 켜세요."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Setup › Bluetooth: ajuste Bluetooth para On e escolha Pairing, depois selecione a câmera aqui. Para geomarcação, ative Location Logging no mesmo menu."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 Setup › Bluetooth 中将 Bluetooth 设为 On 并选择 Pairing，然后在此处选择相机。如需地理标记，请在同一菜单中开启 Location Logging。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "在 Setup › Bluetooth 中將 Bluetooth 設為 On 並選擇 Pairing，然後在此處選擇相機。如需地理標記，請在同一選單中開啟 Location Logging。"
+          }
+        }
+      }
+    },
     "Share CSV": {
       "localizations": {
         "de": {
@@ -19839,6 +20143,82 @@
         }
       }
     },
+    "Swipe down, then Preferences › Wireless Connections › Connect Device › GoPro Quik App, and pick the camera here. HERO9 or later.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wische nach unten, dann Preferences › Wireless Connections › Connect Device › GoPro Quik App, und wähle hier die Kamera aus. Ab HERO9."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desliza hacia abajo, luego Preferences › Wireless Connections › Connect Device › GoPro Quik App, y elige la cámara aquí. HERO9 o posterior."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desliza hacia abajo, luego Preferences › Wireless Connections › Connect Device › GoPro Quik App, y elige la cámara aquí. HERO9 o posterior."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Balayez vers le bas, puis Preferences › Wireless Connections › Connect Device › GoPro Quik App, et choisissez la caméra ici. HERO9 ou plus récente."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नीचे स्वाइप करें, फिर Preferences › Wireless Connections › Connect Device › GoPro Quik App चुनें, और यहाँ कैमरा चुनें। HERO9 या बाद के मॉडल।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usap ke bawah, lalu Preferences › Wireless Connections › Connect Device › GoPro Quik App, dan pilih kamera di sini. HERO9 atau lebih baru."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scorri verso il basso, poi Preferences › Wireless Connections › Connect Device › GoPro Quik App, e scegli la videocamera qui. HERO9 o successive."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下にスワイプし、Preferences › Wireless Connections › Connect Device › GoPro Quik App を選んでから、ここでカメラを選んでください。HERO9 以降。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "아래로 쓸어내린 뒤 Preferences › Wireless Connections › Connect Device › GoPro Quik App을 선택하고, 여기에서 카메라를 고르세요. HERO9 이상."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deslize para baixo, depois Preferences › Wireless Connections › Connect Device › GoPro Quik App, e escolha a câmera aqui. HERO9 ou posterior."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "向下轻扫，然后依次选择 Preferences › Wireless Connections › Connect Device › GoPro Quik App，再在这里选择相机。需 HERO9 或更新机型。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "向下滑動，然後依序選擇 Preferences › Wireless Connections › Connect Device › GoPro Quik App，再在這裡選擇相機。需 HERO9 或更新機型。"
+          }
+        }
+      }
+    },
     "System": {
       "localizations": {
         "de": {
@@ -19911,6 +20291,82 @@
           "stringUnit": {
             "state": "translated",
             "value": "系統"
+          }
+        }
+      }
+    },
+    "THETA X or A1: turn Bluetooth on in the camera's settings, then pick the camera here. Its name is the number part of its serial. THETA V and Z1 are not supported.": {
+      "localizations": {
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X oder A1: Schalte Bluetooth in den Kameraeinstellungen ein und wähle dann hier die Kamera aus. Ihr Name ist der Zahlenteil ihrer Seriennummer. THETA V und Z1 werden nicht unterstützt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X o A1: activa el Bluetooth en los ajustes de la cámara y elige la cámara aquí. Su nombre es la parte numérica de su número de serie. THETA V y Z1 no son compatibles."
+          }
+        },
+        "es-419": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X o A1: activa el Bluetooth en la configuración de la cámara y elige la cámara aquí. Su nombre es la parte numérica de su número de serie. THETA V y Z1 no son compatibles."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X ou A1 : activez le Bluetooth dans les réglages de l’appareil, puis choisissez-le ici. Son nom est la partie numérique de son numéro de série. Les THETA V et Z1 ne sont pas prises en charge."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X या A1: कैमरे की सेटिंग में Bluetooth चालू करें, फिर यहाँ कैमरा चुनें। उसका नाम उसके सीरियल नंबर का अंकों वाला हिस्सा होता है। THETA V और Z1 समर्थित नहीं हैं।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X atau A1: nyalakan Bluetooth di pengaturan kamera, lalu pilih kamera di sini. Namanya adalah bagian angka dari nomor serinya. THETA V dan Z1 tidak didukung."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X o A1: attiva il Bluetooth nelle impostazioni della fotocamera, poi scegli la fotocamera qui. Il suo nome è la parte numerica del numero di serie. THETA V e Z1 non sono supportate."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X または A1：カメラの設定で Bluetooth をオンにしてから、ここでカメラを選んでください。名前はシリアル番号の数字部分です。THETA V と Z1 には対応していません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X 또는 A1: 카메라 설정에서 Bluetooth를 켠 뒤 여기에서 카메라를 고르세요. 이름은 일련번호의 숫자 부분입니다. THETA V와 Z1은 지원하지 않습니다."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X ou A1: ative o Bluetooth nos ajustes da câmera e escolha a câmera aqui. O nome dela é a parte numérica do número de série. THETA V e Z1 não são compatíveis."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X 或 A1：在相机设置中打开蓝牙，然后在这里选择相机。它的名称是序列号中的数字部分。不支持 THETA V 和 Z1。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "THETA X 或 A1：在相機設定中開啟藍牙，然後在這裡選擇相機。它的名稱是序號中的數字部分。不支援 THETA V 和 Z1。"
           }
         }
       }

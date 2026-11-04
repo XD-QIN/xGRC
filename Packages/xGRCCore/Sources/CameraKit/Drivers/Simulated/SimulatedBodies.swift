@@ -145,4 +145,53 @@ extension SimulatedPeripheral {
             Ricoh.geoTag: Data([storeLocation ? 0x01 : 0x00]),
         ])
     }
+
+    // MARK: Panasonic LUMIX
+
+    /// An S5-style body. After our name it notifies `01` on both ready
+    /// characteristics, as lux-lat-long-log saw, unless `sendsReady` is off.
+    public static func lumix(sendsReady: Bool = true) -> SimulatedPeripheral {
+        SimulatedPeripheral(services: [
+            .simulated(Lumix.sessionService, [Lumix.sessionInit: [.write], Lumix.deviceName: [.write]]),
+            .simulated(Lumix.controlService, [Lumix.control: [.write]]),
+            .simulated(Lumix.locationService, [Lumix.location: [.write], Lumix.locationReady: [.notify]]),
+            .simulated(Lumix.clockService, [Lumix.clock: [.write], Lumix.clockReady: [.notify]]),
+        ], responder: { write, camera in
+            guard sendsReady, write.characteristic == Lumix.deviceName else { return }
+            await camera.notify(Data([0x01]), on: Lumix.locationReady)
+            await camera.notify(Data([0x01]), on: Lumix.clockReady)
+        })
+    }
+}
+
+extension SimulatedPeripheral {
+    // MARK: GoPro
+
+    /// A HERO body. It answers Set Shutter with `02 01 <status>` (general
+    /// header, command 01) and every other command with success.
+    public static func gopro(shutterStatus: UInt8 = GoPro.statusSuccess) -> SimulatedPeripheral {
+        SimulatedPeripheral(services: [
+            .simulated(GoPro.controlService, [
+                GoPro.command: [.write], GoPro.commandResponse: [.notify],
+                GoPro.settings: [.write], GoPro.settingsResponse: [.notify],
+            ]),
+        ], responder: { write, camera in
+            guard write.characteristic == GoPro.command, write.data.count >= 2 else { return }
+            let id = write.data[write.data.startIndex + 1]
+            let status = id == GoPro.CommandID.setShutter ? shutterStatus : GoPro.statusSuccess
+            await camera.notify(Data([0x02, id, status]), on: GoPro.commandResponse)
+        })
+    }
+
+    // MARK: Ricoh THETA
+
+    /// A THETA X, or another model by its model string.
+    public static func theta(model: String = "RICOH THETA X") -> SimulatedPeripheral {
+        SimulatedPeripheral(services: [
+            .simulated(Theta.infoService, [Theta.modelNumber: [.read]]),
+            .simulated(Theta.controlService, [
+                Theta.notifyState: [.notify], Theta.setOptions: [.write], Theta.requestShutter: [.write],
+            ]),
+        ], values: [Theta.modelNumber: Data(model.utf8)])
+    }
 }
