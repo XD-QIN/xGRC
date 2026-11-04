@@ -112,7 +112,7 @@ Everything beyond this overview lives in [`Dev_Doc/`](Dev_Doc):
 | [Watch sheet close button](Dev_Doc/10-29-26_watch-sheet-close-button-01.md) | Why the watch sheets' close button was white on white, and the replacement |
 | [Panasonic LUMIX support](Dev_Doc/11-03-26_panasonic-lumix-support-01.md) | The LUMIX driver ported from furble's pull request, where the sources disagree, and what the device test must check |
 | [GoPro and RICOH THETA support](Dev_Doc/11-03-26_gopro-and-theta-support-02.md) | Two remote-only brands built from the makers' own published Bluetooth specs, which bodies are left out and why, and the device test |
-| [Version 1.0.1](Dev_Doc/11-04-26_version-1.0.1-01.md) | The 1.0.1 (build 5) version bump for the device test build of the LUMIX, GoPro and THETA support |
+| [Version 1.0.1](Dev_Doc/11-04-26_version-1.0.1-01.md) | The 1.0.1 (build 1) version bump for the device test build of the LUMIX, GoPro and THETA support |
 
 Code comments cite these as *product spec §*, *architecture doc §* and *protocol reference §* followed by the section name. The design-system boards are indexed in [`Design/README.md`](Design/README.md).
 
